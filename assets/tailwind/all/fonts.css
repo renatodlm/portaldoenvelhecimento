@@ -1,0 +1,35 @@
+@font-face {
+   font-family: 'Kollektif';
+   src: url('../webfonts/Kollektif-Italic.woff2') format('woff2'),
+      url('../webfonts/Kollektif-Italic.woff') format('woff');
+   font-weight: normal;
+   font-style: italic;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Kollektif';
+   src: url('../webfonts/Kollektif-Bold.woff2') format('woff2'),
+      url('../webfonts/Kollektif-Bold.woff') format('woff');
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Kollektif';
+   src: url('../webfonts/Kollektif-BoldItalic.woff2') format('woff2'),
+      url('../webfonts/Kollektif-BoldItalic.woff') format('woff');
+   font-weight: bold;
+   font-style: italic;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Kollektif';
+   src: url('../webfonts/Kollektif.woff2') format('woff2'),
+      url('../webfonts/Kollektif.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
