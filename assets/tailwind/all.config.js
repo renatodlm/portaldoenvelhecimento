@@ -22,7 +22,7 @@ module.exports = {
       },
       fontFamily: {
          primary: [
-            'Kollektif',
+            'Inter',
             'ui-sans-serif',
             'system-ui',
             '-apple-system',
@@ -59,6 +59,7 @@ module.exports = {
             neutral: {
                100: '#BBBBBB',
                300: '#F4F4F4',
+               500: '#514E4E'
             },
             yellow: {
                500: '#F5C342',

@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package howbt
+ * @package portaldoenvelhecimento
  */
 
 wp_footer(); ?>

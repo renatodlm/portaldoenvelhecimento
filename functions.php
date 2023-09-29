@@ -1,11 +1,11 @@
 <?php
 
 /**
- * howbt functions and definitions
+ * portaldoenvelhecimento functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package howbt
+ * @package portaldoenvelhecimento
  */
 
 if (!defined('_S_VERSION'))
@@ -21,15 +21,15 @@ if (!defined('_S_VERSION'))
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function howbt_setup()
+function portaldoenvelhecimento_setup()
 {
    /*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on howbt, use a find and replace
-		* to change 'howbt' to the name of your theme in all the template files.
+		* If you're building a theme based on portaldoenvelhecimento, use a find and replace
+		* to change 'portaldoenvelhecimento' to the name of your theme in all the template files.
 		*/
-   load_theme_textdomain('howbt', get_template_directory() . '/languages');
+   load_theme_textdomain('portaldoenvelhecimento', get_template_directory() . '/languages');
 
    // Add default posts and comments RSS feed links to head.
    add_theme_support('automatic-feed-links');
@@ -52,7 +52,7 @@ function howbt_setup()
    // This theme uses wp_nav_menu() in one location.
    register_nav_menus(
       array(
-         'menu-1' => esc_html__('Primary', 'howbt'),
+         'menu-1' => esc_html__('Primary', 'portaldoenvelhecimento'),
       )
    );
 
@@ -77,7 +77,7 @@ function howbt_setup()
    add_theme_support(
       'custom-background',
       apply_filters(
-         'howbt_custom_background_args',
+         'portaldoenvelhecimento_custom_background_args',
          array(
             'default-color' => 'ffffff',
             'default-image' => '',
@@ -103,7 +103,7 @@ function howbt_setup()
       )
    );
 }
-add_action('after_setup_theme', 'howbt_setup');
+add_action('after_setup_theme', 'portaldoenvelhecimento_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -112,24 +112,24 @@ add_action('after_setup_theme', 'howbt_setup');
  *
  * @global int $content_width
  */
-function howbt_content_width()
+function portaldoenvelhecimento_content_width()
 {
-   $GLOBALS['content_width'] = apply_filters('howbt_content_width', 640);
+   $GLOBALS['content_width'] = apply_filters('portaldoenvelhecimento_content_width', 640);
 }
-add_action('after_setup_theme', 'howbt_content_width', 0);
+add_action('after_setup_theme', 'portaldoenvelhecimento_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function howbt_widgets_init()
+function portaldoenvelhecimento_widgets_init()
 {
    register_sidebar(
       array(
-         'name'          => esc_html__('Sidebar', 'howbt'),
+         'name'          => esc_html__('Sidebar', 'portaldoenvelhecimento'),
          'id'            => 'sidebar-1',
-         'description'   => esc_html__('Add widgets here.', 'howbt'),
+         'description'   => esc_html__('Add widgets here.', 'portaldoenvelhecimento'),
          'before_widget' => '<section id="%1$s" class="widget %2$s">',
          'after_widget'  => '</section>',
          'before_title'  => '<h2 class="widget-title">',
@@ -137,12 +137,12 @@ function howbt_widgets_init()
       )
    );
 }
-add_action('widgets_init', 'howbt_widgets_init');
+add_action('widgets_init', 'portaldoenvelhecimento_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function howbt_scripts()
+function portaldoenvelhecimento_scripts()
 {
    wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), _S_VERSION, true);
    wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.css', array(), '1.0.0', 'all');
@@ -160,7 +160,7 @@ function howbt_scripts()
       'ajaxUrl'   => admin_url('admin-ajax.php'),
    ]);
 }
-add_action('wp_enqueue_scripts', 'howbt_scripts');
+add_action('wp_enqueue_scripts', 'portaldoenvelhecimento_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -233,7 +233,7 @@ function register_ajax_callback()
 
    if (!empty($_POST['institution']))
    {
-      update_user_meta($new_user_id, 'howbt_institution', $_POST['institution']);
+      update_user_meta($new_user_id, 'portaldoenvelhecimento_institution', $_POST['institution']);
    }
 
    $name = $_POST['name'];
@@ -255,38 +255,38 @@ function register_ajax_callback()
    ]);
 }
 
-function adicionar_coluna_howbt_institution($columns)
+function adicionar_coluna_portaldoenvelhecimento_institution($columns)
 {
-   $columns['howbt_institution'] = 'Instituição';
+   $columns['portaldoenvelhecimento_institution'] = 'Instituição';
    return $columns;
 }
-add_filter('manage_users_columns', 'adicionar_coluna_howbt_institution');
+add_filter('manage_users_columns', 'adicionar_coluna_portaldoenvelhecimento_institution');
 
-function exibir_valor_howbt_institution($value, $column_name, $user_id)
+function exibir_valor_portaldoenvelhecimento_institution($value, $column_name, $user_id)
 {
-   if ($column_name === 'howbt_institution')
+   if ($column_name === 'portaldoenvelhecimento_institution')
    {
-      $howbt_institution = get_user_meta($user_id, 'howbt_institution', true);
-      return $howbt_institution;
+      $portaldoenvelhecimento_institution = get_user_meta($user_id, 'portaldoenvelhecimento_institution', true);
+      return $portaldoenvelhecimento_institution;
    }
    return $value;
 }
-add_filter('manage_users_custom_column', 'exibir_valor_howbt_institution', 10, 3);
+add_filter('manage_users_custom_column', 'exibir_valor_portaldoenvelhecimento_institution', 10, 3);
 
 
-function adicionar_campo_howbt_institution($user)
+function adicionar_campo_portaldoenvelhecimento_institution($user)
 {
 ?>
    <h3>Informações Adicionais</h3>
    <table class="form-table">
       <tr>
-         <th><label for="howbt_institution">Instituição</label></th>
+         <th><label for="portaldoenvelhecimento_institution">Instituição</label></th>
          <td>
-            <input type="text" name="howbt_institution" id="howbt_institution" value="<?php echo esc_attr(get_user_meta($user->ID, 'howbt_institution', true)); ?>" class="regular-text">
+            <input type="text" name="portaldoenvelhecimento_institution" id="portaldoenvelhecimento_institution" value="<?php echo esc_attr(get_user_meta($user->ID, 'portaldoenvelhecimento_institution', true)); ?>" class="regular-text">
          </td>
       </tr>
    </table>
 <?php
 }
-add_action('show_user_profile', 'adicionar_campo_howbt_institution');
-add_action('edit_user_profile', 'adicionar_campo_howbt_institution');
+add_action('show_user_profile', 'adicionar_campo_portaldoenvelhecimento_institution');
+add_action('edit_user_profile', 'adicionar_campo_portaldoenvelhecimento_institution');

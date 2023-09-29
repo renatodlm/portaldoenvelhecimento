@@ -1,45 +1,11 @@
-body {
-   @apply bg-white;
+.custom-logo {
+   @apply max-w-full w-auto h-[5.625rem];
 }
 
-section.hero {
-   @apply overflow-hidden bg-gray-300;
+.menu-primary ul {
+   @apply flex gap-10 items-center flex-wrap;
 }
 
-section.hero .container-around {
-   @apply relative overflow-hidden;
-}
-
-section.hero .container-around::before {
-   content: " ";
-   right: 0;
-   top: 50%;
-   transform: translateY(-50%);
-   height: 100%;
-   width: 100%;
-   background-image: url(./../img/hero-rectangle.svg);
-   background-size: auto 101%;
-   @apply absolute max-w-[1440px] mx-auto bg-no-repeat bg-right z-10;
-}
-
-@media(max-width:768px) {
-   section.hero .container-around::before {
-      transform: translateX(-61%) rotate(-40deg);
-   }
-}
-
-@media(max-width:576px) {
-   section.hero .container-around::before {
-      transform: translateX(-50%) rotate(-45deg);
-   }
-}
-
-@media(max-width:444px) {
-   section.hero .container-around::before {
-      transform: translateX(-30%) rotate(-45deg);
-   }
-}
-
-section.hero .container-around::after {
-   @apply bg-purple-500 z-0 left-full -ml-[2px] h-full content-[''] absolute bottom-0 top-0 w-[50vw];
+.menu-primary li a {
+   @apply text-white font-bold;
 }

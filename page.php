@@ -10,7 +10,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package howbt
+ * @package portaldoenvelhecimento
  */
 
 get_header();

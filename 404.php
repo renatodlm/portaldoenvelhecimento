@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package howbt
+ * @package portaldoenvelhecimento
  */
 
 get_header();
@@ -15,7 +15,7 @@ get_header();
 
    <section class="error-404 not-found h-[100vh] w-full flex flex-col items-center justify-center bg-purple-500">
       <header class="page-header">
-         <h1 class="page-title text-white text-4xl font-bold"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'howbt'); ?></h1>
+         <h1 class="page-title text-white text-4xl font-bold"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'portaldoenvelhecimento'); ?></h1>
       </header><!-- .page-header -->
 
       <div class="page-content flex flex-col justify-center items-center">
