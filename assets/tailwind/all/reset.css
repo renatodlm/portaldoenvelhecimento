@@ -1,3 +1,45 @@
 body {
    @apply font-primary;
 }
+
+body a {
+   @apply hover:text-blue-500 transition-all;
+}
+
+/* Estilo padrão para inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="url"],
+input[type="search"],
+input[type="button"],
+input[type="reset"] {
+   @apply border border-gray-300 p-2 rounded-md focus:outline-none max-w-full;
+}
+
+/* Estilo para textarea */
+textarea {
+   @apply border border-gray-300 p-2 rounded-md focus:outline-none max-w-full;
+}
+
+/* Estilo para select */
+select {
+   @apply border border-gray-300 p-2 rounded-md focus:outline-none max-w-full;
+}
+
+input[type="checkbox"] {
+   @apply m-2;
+}
+
+/* Estilo para Radio */
+input[type="radio"] {
+   @apply m-2;
+}
+
+/* Estilo para Submit */
+input[type="submit"] {
+   @apply bg-gray-800 text-white font-bold py-2 px-4 rounded max-w-full;
+}
