@@ -162,6 +162,12 @@ function portaldoenvelhecimento_scripts()
 }
 add_action('wp_enqueue_scripts', 'portaldoenvelhecimento_scripts');
 
+
+/**
+ * Custom setup
+ */
+require get_template_directory() . '/inc/setup.php';
+
 /**
  * Implement the Custom Header feature.
  */

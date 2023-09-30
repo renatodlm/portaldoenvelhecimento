@@ -9,3 +9,11 @@
 .menu-primary li a {
    @apply text-white font-bold;
 }
+
+.portaldoenvelhecimento-post-thumbnail.thumb-h-full a {
+   @apply block h-full;
+}
+
+.portaldoenvelhecimento-post-thumbnail.thumb-h-full img {
+   @apply h-full object-cover;
+}
