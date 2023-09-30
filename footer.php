@@ -48,7 +48,6 @@ $ano_atual = wp_date('Y');
                      <option value=""><?php echo esc_attr(__('Selecione o Mês')); ?></option>
                      <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
                   </select>
-                  </ul>
                </div>
             </div>
             <div class="col-span-2 px-4 flex flex-col gap-8">
@@ -71,7 +70,7 @@ $ano_atual = wp_date('Y');
                      <li><a href="#" class="text-white"><?php render_svg('instagram', 'w-6 h-6') ?></a></li>
                      <li><a href="#" class="text-white"><?php render_svg('youtube', 'w-6 h-6') ?></a></li>
                      <li><a href="#" class="text-white"><?php render_svg('linkedin', 'w-6 h-6') ?></a></li>
-
+                  </ul>
                </div>
             </div>
          </div>
