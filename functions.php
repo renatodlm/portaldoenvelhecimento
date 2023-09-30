@@ -162,7 +162,10 @@ function portaldoenvelhecimento_scripts()
 }
 add_action('wp_enqueue_scripts', 'portaldoenvelhecimento_scripts');
 
-
+/**
+ * Render svg
+ */
+require get_template_directory() . '/inc/render-svg.php';
 /**
  * Custom setup
  */
