@@ -1,7 +1,5 @@
-<div class="w-[17.5rem] bg-[#D9D9D9] rounded-lg p-4 h-fit flex flex-col gap-6">
-   <?php //get_sidebar('sidebar-1')
-   ?>
-   <div>
+<div class="w-[17.5rem] bg-[#D9D9D9] rounded-lg h-fit flex flex-col divide-y divide-gray-400">
+   <div class="py-5 px-4">
       <h5 class="mb-6 font-semibold text-lg">
          <?php esc_html_e('Você também pode gostar...') ?>
       </h5>
@@ -37,18 +35,51 @@
       ?>
 
    </div>
-   <div>
+   <div class="py-5 px-4">
       <form action="" class="flex flex-col gap-3">
          <h5 class="font-semibold text-lg">
             <?php esc_html_e('Newsletter', 'portaldoenvelhecimento') ?>
          </h5>
-         <p class="m-0 italic text-gray-800 text-sm">Cadastre-se e receba o conteúdo mais atualizado sobre o envelhecimento em seu e-mail!</p>
+         <p class="m-0 italic text-gray-800 text-sm">
+            <?php
+            esc_html_e('Cadastre-se e receba o conteúdo mais atualizado sobre o envelhecimento em seu e-mail!', 'portaldoenvelhecimento') ?>
+         </p>
          <input name="newsletter-email" type="email" placeholder="Endereço de e-mail" required>
-         <p class="m-0 italic text-gray-500 text-xs">Ao se cadastrar você está concordando com os termos e em receber informações sobre a nossa programação de cursos e lançamentos.</p>
-         <button class="bg-yellow-400 rounded-lg py-2 px-4 uppercase font-medium text-base text-black" type="submit">QUERO ME CADASTRAR!</button>
+         <p class="m-0 italic text-gray-500 text-xs">
+            <?php
+            esc_html_e('Ao se cadastrar você está concordando com os termos e em receber informações sobre a nossa programação de cursos e lançamentos.', 'portaldoenvelhecimento')
+            ?>
+         </p>
+         <button class="bg-yellow-400 rounded-lg py-2 px-4 uppercase font-medium text-base text-black" type="submit">
+            <?php esc_html_e('QUERO ME CADASTRAR!', 'portaldoenvelhecimento') ?>
+         </button>
       </form>
    </div>
-   <div>
-      <h5><?php esc_html_e('Categorias', 'portaldoenvelhecimento') ?></h5>
+   <div class="py-5 px-4">
+      <h5 class="font-semibold text-lg mb-3">
+         <?php esc_html_e('Categorias', 'portaldoenvelhecimento') ?>
+      </h5>
+      <ul class="flex flex-col divide-y divide-gray-100">
+         <?php
+         $categories = get_categories();
+
+         foreach ($categories as $category)
+         {
+         ?>
+
+            <li class="w-full text-sm font-medium py-2">
+               <a href="<?php echo get_category_link($category->term_id) ?>">
+                  <?php echo  $category->name  ?>
+               </a>
+            </li>
+         <?php
+         }
+         ?>
+      </ul>
    </div>
+   <!-- <div class="py-5 px-4">
+      <?php
+      //get_sidebar('sidebar-1')
+      ?>
+   </div> -->
 </div>
