@@ -49,6 +49,9 @@ module.exports = {
          ],
       },
       extend: {
+         aspectRatio: {
+            '16/6': '16 / 6',
+         },
          screens: {
             'xs': '420px',
             '3xl': '1650px',
