@@ -13,14 +13,16 @@ get_header();
 
 <main id="primary" class="site-main">
 
-   <section class="error-404 not-found h-[100vh] w-full flex flex-col items-center justify-center bg-purple-500">
+   <section class="error-404 not-found h-[100vh] w-full flex flex-col items-center justify-center bg-white">
       <header class="page-header">
-         <h1 class="page-title text-white text-4xl font-bold"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'portaldoenvelhecimento'); ?></h1>
+         <h1 class="page-title text-gray-800 text-4xl font-bold">
+            <?php esc_html_e('Ops! Essa página não pode ser encontrada..', 'portaldoenvelhecimento'); ?>
+         </h1>
       </header><!-- .page-header -->
 
       <div class="page-content flex flex-col justify-center items-center">
-         <h1 class="text-[9.375rem] font-bold text-white">404</h1>
-         <a href="<?php echo get_home_url() ?>" class="bg-yellow-500 rounded-lg text-purple-400 py-2 px-5 max-auto">Go home</a>
+         <h1 class="text-[9.375rem] font-bold text-gray-800">404</h1>
+         <a href="<?php echo get_home_url() ?>" class="bg-yellow-400 rounded-lg text-gray-800 py-2 px-5 max-auto">Go home</a>
       </div><!-- .page-content -->
    </section><!-- .error-404 -->
 
