@@ -48,27 +48,26 @@
          </div>
       </div>
    </header>
-   <div>
-      <ul class="flex flex-col space-y-2 w-fit fixed left-0 ml-1 top-1/2 -translate-y-1/2">
-         <li class="p-1 bg-white border border-gray-800" target="_blank">
-            <a href="https://www.facebook.com/portaldoenvelhecimento" class="text-gray-800">
-               <?php render_svg('facebook', 'w-6 h-6') ?>
-            </a>
-         </li>
-         <li class="p-1 bg-white border border-gray-800">
-            <a href="https://www.instagram.com/portaldoenvelhecimento/" class="text-gray-800" target="_blank">
-               <?php render_svg('instagram', 'w-6 h-6') ?>
-            </a>
-         </li>
-         <li class="p-1 bg-white border border-gray-800">
-            <a href="https://www.youtube.com/channel/UCUdVNLrCWEY6HuweJUo3Dpg" class="text-gray-800" target="_blank">
-               <?php render_svg('youtube', 'w-6 h-6') ?>
-            </a>
-         </li>
-         <li class="p-1 bg-white border border-gray-800">
-            <a href="https://www.linkedin.com/company/portaldoenvelhecimento/" class="text-gray-800" target="_blank">
-               <?php render_svg('linkedin', 'w-6 h-6') ?>
-            </a>
-         </li>
-      </ul>
-   </div>
+
+   <ul class="lg:flex hidden flex-col space-y-2 w-fit fixed left-0 ml-1 top-1/2 -translate-y-1/2">
+      <li class="p-1 bg-white border border-gray-800" target="_blank">
+         <a href="https://www.facebook.com/portaldoenvelhecimento" class="text-gray-800">
+            <?php render_svg('facebook', 'w-6 h-6') ?>
+         </a>
+      </li>
+      <li class="p-1 bg-white border border-gray-800">
+         <a href="https://www.instagram.com/portaldoenvelhecimento/" class="text-gray-800" target="_blank">
+            <?php render_svg('instagram', 'w-6 h-6') ?>
+         </a>
+      </li>
+      <li class="p-1 bg-white border border-gray-800">
+         <a href="https://www.youtube.com/channel/UCUdVNLrCWEY6HuweJUo3Dpg" class="text-gray-800" target="_blank">
+            <?php render_svg('youtube', 'w-6 h-6') ?>
+         </a>
+      </li>
+      <li class="p-1 bg-white border border-gray-800">
+         <a href="https://www.linkedin.com/company/portaldoenvelhecimento/" class="text-gray-800" target="_blank">
+            <?php render_svg('linkedin', 'w-6 h-6') ?>
+         </a>
+      </li>
+   </ul>
