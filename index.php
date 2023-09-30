@@ -28,7 +28,7 @@ get_header();
                while (have_posts()) :
                   the_post();
 
-                  get_template_part('template-parts/content', get_post_type(), [
+                  get_template_part('template-parts/content', null, [
                      'index' => $i
                   ]);
                   $i++;
@@ -97,17 +97,11 @@ get_header();
 
             </div>
          </div>
-         <div class="w-[17.5rem] bg-[#D9D9D9] rounded-lg p-4 h-fit">
-            <?php //get_sidebar('sidebar-1')
-            ?>
-            <div>
-               <h5><?php esc_html_e('Newsletter semanal', 'portaldoenvelhecimento') ?></h5>
+         <?php
 
-            </div>
-            <div>
-               <h5><?php esc_html_e('Categorias', 'portaldoenvelhecimento') ?></h5>
-            </div>
-         </div>
+         get_template_part('template-parts/content', 'sidebar');
+
+         ?>
       </div>
    </div>
 
