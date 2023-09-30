@@ -75,6 +75,7 @@ module.exports = {
             },
             yellow: {
                500: '#F5C342',
+               400: '#FFAF37'
             },
          },
       },

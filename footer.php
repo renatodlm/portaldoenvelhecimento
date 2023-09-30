@@ -38,7 +38,7 @@ $current_year = wp_date('Y');
                   <div class="footer-menu-primary">
                      <?php
                      wp_nav_menu([
-                        'theme_location'  => 'menu-1',
+                        'theme_location'  => 'footer',
                         'container_class' => '',
                         'container'       => 'nav',
                         'menu_class'      => 'menu-primary'
@@ -109,7 +109,7 @@ $current_year = wp_date('Y');
             <div class="subfooter-menu-primary">
                <?php
                wp_nav_menu([
-                  'theme_location'  => 'menu-1',
+                  'theme_location'  => 'institutional',
                   'container_class' => '',
                   'container'       => 'nav',
                   'menu_class'      => 'menu-primary'

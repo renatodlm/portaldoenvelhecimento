@@ -2,7 +2,7 @@
    @apply max-w-full w-auto h-[5.625rem];
 }
 
-.footer-menu-primary .menu-primary ul {
+.footer-menu-primary ul.menu-primary {
    @apply flex flex-col gap-0 divide-y divide-gray-500 items-start flex-wrap;
 }
 
@@ -14,16 +14,20 @@
    @apply text-sm hover:text-blue-500 transition-all;
 }
 
-.subfooter-menu-primary .menu-primary ul {
+.subfooter-menu-primary ul.menu-primary {
    @apply flex gap-4 xl:gap-6 items-center flex-wrap;
 }
 
-.subfooter-menu-primary .menu-primary li a {
+.subfooter-menu-primary ul.menu-primary li a {
    @apply text-sm hover:text-blue-500 transition-all;
 }
 
-.menu-primary ul {
+ul.menu-primary {
    @apply flex gap-10 items-center flex-wrap;
+}
+
+ul.menu-primary li {
+   @apply !p-0;
 }
 
 .menu-primary li a {
