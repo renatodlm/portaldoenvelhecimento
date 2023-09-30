@@ -33,7 +33,7 @@ $title_class = $index === 0 ? 'text-4xl font-medium' : 'text-2xl font-medium';
                   $contador++;
                   if ($contador <= 3)
                   {
-                     echo '<a class="py-1 px-2 bg-blue-300 rounded-md text-xs" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                     echo '<a class="py-1 px-2 bg-blue-500 rounded-md text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
                   }
                }
             }
