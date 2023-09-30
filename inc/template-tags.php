@@ -128,7 +128,7 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
     * Wraps the post thumbnail in an anchor element on index views, or a div
     * element when on single views.
     */
-   function portaldoenvelhecimento_post_thumbnail()
+   function portaldoenvelhecimento_post_thumbnail($crop = 'post-thumbnail', $class = 'max-full rounded-lg object-cover')
    {
       if (post_password_required() || is_attachment() || !has_post_thumbnail())
       {
@@ -139,7 +139,19 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
 ?>
 
          <div class="post-thumbnail">
-            <?php the_post_thumbnail(); ?>
+            <?php
+            the_post_thumbnail(
+               $crop,
+               array(
+                  'alt' => the_title_attribute(
+                     array(
+                        'echo' => false,
+                     )
+                  ),
+                  'class' => $class
+               )
+            );
+            ?>
          </div><!-- .post-thumbnail -->
 
       <?php else : ?>
@@ -147,14 +159,14 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
          <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
             <?php
             the_post_thumbnail(
-               'post-thumbnail',
+               $crop,
                array(
                   'alt' => the_title_attribute(
                      array(
                         'echo' => false,
                      )
                   ),
-                  'class' => 'max-full rounded-lg object-cover'
+                  'class' => $class
                )
             );
             ?>
