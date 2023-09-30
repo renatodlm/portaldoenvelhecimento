@@ -144,8 +144,8 @@ add_action('widgets_init', 'portaldoenvelhecimento_widgets_init');
  */
 function portaldoenvelhecimento_scripts()
 {
-   wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), _S_VERSION, true);
-   wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.css', array(), '1.0.0', 'all');
+   // wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.js', array(), _S_VERSION, true);
+   // wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/lib/swiper-bundle.min.css', array(), '1.0.0', 'all');
    wp_enqueue_style('all', get_template_directory_uri() . '/assets/css/all.min.css', array(), '1.0.0', 'all');
 
    wp_enqueue_script('navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true);
