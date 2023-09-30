@@ -154,7 +154,7 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
                         'echo' => false,
                      )
                   ),
-                  'class' => 'rounded-lg object-cover'
+                  'class' => 'max-full rounded-lg object-cover'
                )
             );
             ?>

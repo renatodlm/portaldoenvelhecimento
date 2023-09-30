@@ -11,6 +11,9 @@ module.exports = {
    ],
    safelist: [
       'hidden',
+      'bg-green-500',
+      'bg-blue-500',
+      'bg-red-500',
    ],
    plugins: [require('@tailwindcss/line-clamp')],
    theme: {
