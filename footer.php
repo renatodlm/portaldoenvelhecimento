@@ -10,7 +10,7 @@
  * @package portaldoenvelhecimento
  */
 
-$ano_atual = wp_date('Y');
+$current_year = wp_date('Y');
 ?>
 
 <footer class="bg-neutral-700">
@@ -19,18 +19,22 @@ $ano_atual = wp_date('Y');
          <div class="grid lg:grid-cols-2 xl:grid-cols-5">
             <div class="col-span-1 xl:col-span-2 px-4 lg:mb-0 mb-8 flex flex-col gap-8">
                <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">Sobre Nós</h4>
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+                     <?php esc_html_e('Sobre Nós', 'portaldoenvelhecimento') ?>
+                  </h4>
                   <div class="mb-3">
                      <?php the_custom_logo() ?>
                   </div>
                   <p class="text-gray-300 leading-tight text-sm">
-                     Somos profissionais de diversas áreas e oriundos de diversas regiões do Brasil e de outros países, todos estudiosos do processo de envelhecimento na perspectiva do ser que envelhece e não unicamente que adoece. Esta nossa filosofia e “atitude” frente ao envelhecimento é o pressuposto para o desenvolvimento da contínua construção de uma “Cultura da Longevidade”.
+                     <?php esc_html_e('Somos profissionais de diversas áreas e oriundos de diversas regiões do Brasil e de outros países, todos estudiosos do processo de envelhecimento na perspectiva do ser que envelhece e não unicamente que adoece. Esta nossa filosofia e “atitude” frente ao envelhecimento é o pressuposto para o desenvolvimento da contínua construção de uma “Cultura da Longevidade”.', 'portaldoenvelhecimento') ?>
                   </p>
                </div>
             </div>
             <div class="col-span-1 px-4 lg:mb-0 mb-8 flex flex-col gap-8">
                <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">Menu</h4>
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+                     <?php esc_html_e('Menu', 'portaldoenvelhecimento') ?>
+                  </h4>
                   <div class="footer-menu-primary">
                      <?php
                      wp_nav_menu([
@@ -43,7 +47,9 @@ $ano_atual = wp_date('Y');
                   </div>
                </div>
                <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">Arquivos</h4>
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+                     <?php esc_html_e('Arquivos', 'portaldoenvelhecimento') ?>
+                  </h4>
                   <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
                      <option value=""><?php echo esc_attr(__('Selecione o Mês')); ?></option>
                      <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
@@ -64,12 +70,30 @@ $ano_atual = wp_date('Y');
                   </ul>
                </div>
                <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">Redes sociais</h4>
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+                     <?php esc_html_e('Redes sociais', 'portaldoenvelhecimento') ?>
+                  </h4>
                   <ul class="flex space-x-4">
-                     <li><a href="#" class="text-white"><?php render_svg('facebook', 'w-6 h-6') ?></a></li>
-                     <li><a href="#" class="text-white"><?php render_svg('instagram', 'w-6 h-6') ?></a></li>
-                     <li><a href="#" class="text-white"><?php render_svg('youtube', 'w-6 h-6') ?></a></li>
-                     <li><a href="#" class="text-white"><?php render_svg('linkedin', 'w-6 h-6') ?></a></li>
+                     <li target="_blank">
+                        <a class="text-white" href="https://www.facebook.com/portaldoenvelhecimento" class="text-gray-800">
+                           <?php render_svg('facebook', 'w-6 h-6') ?>
+                        </a>
+                     </li>
+                     <li>
+                        <a class="text-white" href="https://www.instagram.com/portaldoenvelhecimento/" class="text-gray-800" target="_blank">
+                           <?php render_svg('instagram', 'w-6 h-6') ?>
+                        </a>
+                     </li>
+                     <li>
+                        <a class="text-white" href="https://www.youtube.com/channel/UCUdVNLrCWEY6HuweJUo3Dpg" class="text-gray-800" target="_blank">
+                           <?php render_svg('youtube', 'w-6 h-6') ?>
+                        </a>
+                     </li>
+                     <li>
+                        <a class="text-white" href="https://www.linkedin.com/company/portaldoenvelhecimento/" class="text-gray-800" target="_blank">
+                           <?php render_svg('linkedin', 'w-6 h-6') ?>
+                        </a>
+                     </li>
                   </ul>
                </div>
             </div>
@@ -79,7 +103,7 @@ $ano_atual = wp_date('Y');
    <div class="bg-neutral-800 py-4">
       <div class="container flex gap-3 lg:gap-6 items-center justify-between flex-wrap">
          <div>
-            <p class="text-gray-300 m-0">Copyright © <span><?php echo $ano_atual ?></span> Portal do Envelhecimento. Todos os direitos reservados.</p>
+            <p class="text-gray-300 m-0">Copyright © <span><?php echo $current_year ?></span> <?php esc_html_e('Portal do Envelhecimento. Todos os direitos reservados.', 'portaldoenvelhecimento') ?></p>
          </div>
          <div class="flex flex-col gap-x-3">
             <div class="subfooter-menu-primary">

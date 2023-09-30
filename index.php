@@ -50,7 +50,15 @@ get_header();
             ?>
          </div>
          <div class="w-[17.5rem] bg-[#D9D9D9] rounded-lg p-4">
-            <?php get_sidebar('sidebar-1') ?>
+            <?php //get_sidebar('sidebar-1') 
+            ?>
+            <div>
+               <h5><?php esc_html_e('Newsletter semanal', 'portaldoenvelhecimento') ?></h5>
+
+            </div>
+            <div>
+               <h5><?php esc_html_e('Categorias', 'portaldoenvelhecimento') ?></h5>
+            </div>
          </div>
       </div>
 
