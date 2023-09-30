@@ -27,7 +27,7 @@
    <?php portaldoenvelhecimento_post_thumbnail(); ?>
 
    <div class="entry-summary">
-      <?php the_excerpt(); ?>
+      <?php echo show_excerpt(); ?>
    </div><!-- .entry-summary -->
 
    <footer class="entry-footer">

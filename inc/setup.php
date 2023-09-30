@@ -1,13 +1,9 @@
 <?php
 
-function custom_excerpt_filter($excerpt)
+function show_excerpt($limit = 120, $final = '...')
 {
-   $limite = 120;
-   $excerpt = mb_strimwidth($excerpt, 0, $limite, '...');
-
-   $excerpt = str_replace('[...]', '...', $excerpt);
+   $excerpt = apply_filters('the_excerpt', get_the_excerpt());
+   $excerpt = mb_strimwidth($excerpt, 0, $limit, $final);
 
    return $excerpt;
 }
-
-add_filter('the_excerpt', 'custom_excerpt_filter');

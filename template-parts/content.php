@@ -8,15 +8,16 @@
  * @package portaldoenvelhecimento
  */
 
-$index = $args['index'] ?? false;
-$thumb_class = $index === 0 ? 'w-1/2 max-w-full h-[19.625rem] thumb-h-full' : 'w-[18.75rem] h-[11.25rem] thumb-h-full max-w-full';
-$content_class = $index === 0 ? 'flex-1' : 'flex-1';
-$title_class = $index === 0 ? 'text-4xl font-medium' : 'text-2xl font-medium';
+$index           = $args['index'] ?? false;
+$thumb_class     = $index === 0 ? 'w-1/2 max-w-full h-[19.625rem] thumb-h-full' : 'w-[18.75rem] h-[11.25rem] thumb-h-full max-w-full';
+$content_class   = $index === 0 ? 'flex-1' : 'flex-1';
+$title_class     = $index === 0 ? 'text-4xl font-medium' : 'text-2xl font-medium';
+$container_class = $index  === 0 ? 'pb-10 border-b border-gray-400' : '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-   <div class="flex gap-10 items-center">
+   <div class="flex gap-10 items-center <?php echo $container_class ?>">
       <div class="portaldoenvelhecimento-post-thumbnail <?php echo $thumb_class ?>">
          <?php portaldoenvelhecimento_post_thumbnail(); ?>
       </div>
@@ -61,7 +62,7 @@ $title_class = $index === 0 ? 'text-4xl font-medium' : 'text-2xl font-medium';
 
          <div class="entry-content text-gray-600 text-base">
             <?php
-            the_excerpt();
+            echo show_excerpt();
             ?>
          </div><!-- .entry-content -->
       </div>
