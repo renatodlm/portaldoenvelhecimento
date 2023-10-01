@@ -30,11 +30,12 @@
 
          <div class="container flex gap-[6.25rem] items-center py-8">
             <?php the_custom_logo() ?>
-            <div class="ads bg-gray-400 flex-1 h-[8.5625rem] flex justify-center items-center">
-               Banner - Pub
+            <div class="ads flex-1 flex justify-end items-center">
+               <?php dynamic_sidebar('sidebar-2')
+               ?>
             </div>
          </div>
-         <div class="bg-neutral-500 py-3.5 uppercase">
+         <div class="bg-neutral-500 uppercase">
             <div class="container">
                <?php
                wp_nav_menu([

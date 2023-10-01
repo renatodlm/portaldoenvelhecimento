@@ -2,38 +2,6 @@
    @apply max-w-full w-auto h-[5.625rem];
 }
 
-.footer-menu-primary ul.menu-primary {
-   @apply flex flex-col gap-0 divide-y divide-gray-500 items-start flex-wrap;
-}
-
-.footer-menu-primary .menu-primary li {
-   @apply py-2 w-full;
-}
-
-.footer-menu-primary .menu-primary li a {
-   @apply text-sm hover:text-blue-500 transition-all;
-}
-
-.subfooter-menu-primary ul.menu-primary {
-   @apply flex gap-4 xl:gap-6 items-center flex-wrap;
-}
-
-.subfooter-menu-primary ul.menu-primary li a {
-   @apply text-sm hover:text-blue-500 transition-all;
-}
-
-ul.menu-primary {
-   @apply flex gap-10 items-center flex-wrap;
-}
-
-ul.menu-primary li {
-   @apply !p-0;
-}
-
-.menu-primary li a {
-   @apply text-white font-bold text-base hover:text-blue-500 transition-all;
-}
-
 .portaldoenvelhecimento-post-thumbnail.thumb-h-full a {
    @apply block h-full hover:text-blue-500 transition-all;
 }
@@ -66,4 +34,9 @@ ul.menu-primary li {
 
 .pagination .current {
    @apply py-2 px-4 bg-blue-500 rounded-[4px] text-white hover:text-white;
+}
+
+
+.widget-title {
+   @apply font-semibold text-lg text-gray-800 mb-4;
 }

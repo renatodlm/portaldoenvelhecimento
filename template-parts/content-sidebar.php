@@ -77,9 +77,9 @@
          ?>
       </ul>
    </div>
-   <!-- <div class="py-5 px-4">
+   <div class="py-5 px-4">
       <?php
-      //get_sidebar('sidebar-1')
+      dynamic_sidebar('sidebar-1')
       ?>
-   </div> -->
+   </div>
 </div>

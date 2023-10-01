@@ -43,3 +43,57 @@ input[type="radio"] {
 input[type="submit"] {
    @apply bg-gray-800 text-white font-bold py-2 px-4 rounded max-w-full;
 }
+
+.entry-content p {
+   @apply mb-4 text-base;
+}
+
+.entry-content strong,
+.entry-content b {
+   @apply font-bold;
+}
+
+.entry-content a {
+   @apply text-blue-600 hover:underline;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+   @apply font-bold;
+}
+
+
+/* Estilize os diferentes níveis de títulos */
+.entry-content h1 {
+   @apply text-4xl;
+   /* Tamanho de fonte para h1 */
+}
+
+.entry-content h2 {
+   @apply text-3xl;
+   /* Tamanho de fonte para h2 */
+}
+
+.entry-content h3 {
+   @apply text-2xl;
+   /* Tamanho de fonte para h3 */
+}
+
+.entry-content h4 {
+   @apply text-xl;
+   /* Tamanho de fonte para h4 */
+}
+
+.entry-content h5 {
+   @apply text-lg;
+   /* Tamanho de fonte para h5 */
+}
+
+.entry-content h6 {
+   @apply text-base;
+   /* Tamanho de fonte para h6 */
+}

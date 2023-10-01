@@ -138,6 +138,28 @@ function portaldoenvelhecimento_widgets_init()
          'after_title'   => '</h2>',
       )
    );
+   register_sidebar(
+      array(
+         'name'          => esc_html__('Header ADS', 'portaldoenvelhecimento'),
+         'id'            => 'sidebar-2',
+         'description'   => esc_html__('Add widgets here.', 'portaldoenvelhecimento'),
+         'before_widget' => '<section id="%1$s" class="widget %2$s">',
+         'after_widget'  => '</section>',
+         'before_title'  => '<h2 class="widget-title">',
+         'after_title'   => '</h2>',
+      )
+   );
+   register_sidebar(
+      array(
+         'name'          => esc_html__('Sidebar 3', 'portaldoenvelhecimento'),
+         'id'            => 'sidebar-3',
+         'description'   => esc_html__('Add widgets here.', 'portaldoenvelhecimento'),
+         'before_widget' => '<section id="%1$s" class="widget %2$s">',
+         'after_widget'  => '</section>',
+         'before_title'  => '<h2 class="widget-title">',
+         'after_title'   => '</h2>',
+      )
+   );
 }
 add_action('widgets_init', 'portaldoenvelhecimento_widgets_init');
 
@@ -163,6 +185,18 @@ function portaldoenvelhecimento_scripts()
    ]);
 }
 add_action('wp_enqueue_scripts', 'portaldoenvelhecimento_scripts');
+
+function enqueue_custom_admin_scripts($hook)
+{
+   if ('widgets.php' === $hook)
+   {
+      wp_enqueue_media();
+
+      wp_enqueue_script('custom-widget-media-upload', get_template_directory_uri() . '/assets/js/custom-widget-media-upload.js', array('jquery'), null, true);
+   }
+}
+
+add_action('admin_enqueue_scripts', 'enqueue_custom_admin_scripts');
 
 /**
  * Render svg

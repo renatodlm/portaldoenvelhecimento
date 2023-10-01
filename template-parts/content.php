@@ -32,9 +32,11 @@ $container_class = $index  === 0 ? 'pb-10 border-b border-gray-400' : '';
                foreach ($tags as $tag)
                {
                   $contador++;
+                  $tag_color = get_theme_mod('tag_color_' . $tag->term_id, '#2ecc71');
+
                   if ($contador <= 3)
                   {
-                     echo '<a class="py-1 px-2 bg-blue-500 rounded-md text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                     echo '<a class="py-1 px-2 rounded-md text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
                   }
                }
             }
