@@ -13,40 +13,68 @@ get_header();
 
 <main id="primary" class="site-main">
 
-   <?php if (have_posts()) : ?>
+   <div class="container py-12">
+      <?php if (have_posts()) : ?>
+         <header class="page-header">
+            <?php
+            the_archive_title('<h1 class="text-2xl font-bold mb-12 page-title">', '</h1>');
+            // the_archive_description('<div class="archive-description">', '</div>');
+            ?>
+         </header><!-- .page-header -->
+         <div class="flex gap-10">
+            <div class="flex gap-6"><!-- flex-grow -->
+               <div class="flex-1 flex-col flex gap-8">
+                  <?php
+                  /* Start the Loop */
+                  while (have_posts()) :
+                     the_post();
 
-      <header class="page-header">
-         <?php
-         the_archive_title('<h1 class="page-title">', '</h1>');
-         the_archive_description('<div class="archive-description">', '</div>');
-         ?>
-      </header><!-- .page-header -->
-
-   <?php
-      /* Start the Loop */
-      while (have_posts()) :
-         the_post();
-
-         /*
+                     /*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-         get_template_part('template-parts/content', get_post_type());
+                     get_template_part('template-parts/content');
 
-      endwhile;
+                  endwhile;
 
-      the_posts_navigation();
+                  ?>
+                  <div class="pagination">
+                     <?php
+                     global $wp_query;
 
-   else :
+                     $big = 999999999; // Número suficientemente grande para garantir que a estrutura de links funcione corretamente
 
-      get_template_part('template-parts/content', 'none');
+                     echo paginate_links(array(
+                        'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                        'format' => '?paged=%#%',
+                        'current' => max(1, get_query_var('paged')),
+                        'total' => $wp_query->max_num_pages,
+                        'prev_text' => 'Anterior',
+                        'next_text' => 'Próxima'
+                     ));
+                     ?>
+                  </div>
+               <?php
 
-   endif;
-   ?>
+            else :
 
+               get_template_part('template-parts/content', 'none');
+
+            endif;
+               ?>
+               </div>
+            </div>
+            <div>
+               <?php
+
+               get_template_part('template-parts/content', 'sidebar-filter');
+
+               ?>
+            </div>
+         </div>
+   </div>
 </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

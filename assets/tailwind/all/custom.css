@@ -50,3 +50,20 @@ ul.menu-primary li {
    column-count: 2;
    column-gap: 1rem;
 }
+
+.pagination {
+   @apply pt-5;
+}
+
+.pagination a.prev,
+.pagination a.next {
+   @apply !bg-gray-800 !hidden;
+}
+
+.pagination a {
+   @apply py-2 px-4 bg-yellow-400 rounded-[4px] text-white hover:text-white;
+}
+
+.pagination .current {
+   @apply py-2 px-4 bg-blue-500 rounded-[4px] text-white hover:text-white;
+}

@@ -13,7 +13,7 @@ get_header();
 
 <main id="primary" class="site-main">
 
-   <section class="error-404 not-found h-[100vh] w-full flex flex-col items-center justify-center bg-white">
+   <section class="error-404 not-found py-16 w-full flex flex-col items-center justify-center bg-white">
       <header class="page-header">
          <h1 class="page-title text-gray-800 text-4xl font-bold">
             <?php esc_html_e('Ops! Essa página não pode ser encontrada..', 'portaldoenvelhecimento'); ?>

@@ -1,6 +1,6 @@
 <div class="w-[17.5rem] bg-[#D9D9D9] rounded-lg h-fit flex flex-col divide-y divide-gray-400">
    <div class="py-5 px-4">
-      <h5 class="mb-6 font-semibold text-lg">
+      <h5 class="font-semibold text-base text-gray-800 mb-6">
          <?php esc_html_e('Você também pode gostar...') ?>
       </h5>
       <?php
@@ -37,7 +37,7 @@
    </div>
    <div class="py-5 px-4">
       <form action="" class="flex flex-col gap-3">
-         <h5 class="font-semibold text-lg">
+         <h5 class="font-semibold text-lg text-gray-800">
             <?php esc_html_e('Newsletter', 'portaldoenvelhecimento') ?>
          </h5>
          <p class="m-0 italic text-gray-800 text-sm">
@@ -56,7 +56,7 @@
       </form>
    </div>
    <div class="py-5 px-4">
-      <h5 class="font-semibold text-lg mb-3">
+      <h5 class="font-semibold text-lg mb-3 text-gray-800">
          <?php esc_html_e('Categorias', 'portaldoenvelhecimento') ?>
       </h5>
       <ul class="flex flex-col divide-y divide-gray-100">

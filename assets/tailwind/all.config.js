@@ -68,6 +68,9 @@ module.exports = {
             gray: {
                300: '#E1E1E3',
             },
+            blue: {
+               500: '#00b3ff'
+            },
             neutral: {
                100: '#BBBBBB',
                300: '#F4F4F4',
