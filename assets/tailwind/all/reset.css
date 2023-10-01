@@ -97,3 +97,90 @@ input[type="submit"] {
    @apply text-base;
    /* Tamanho de fonte para h6 */
 }
+
+
+/* Estilize classes padrões do Gutenberg */
+
+/* Parágrafos */
+.has-default-background-color p {
+   @apply bg-blue-100 p-4 my-4;
+}
+
+/* Títulos */
+.has-default-background-color h1,
+.has-default-background-color h2,
+.has-default-background-color h3,
+.has-default-background-color h4,
+.has-default-background-color h5,
+.has-default-background-color h6 {
+   @apply font-bold mb-2;
+}
+
+/* Listas */
+.has-default-background-color ul,
+.has-default-background-color ol {
+   @apply list-disc ml-6 mb-4;
+}
+
+/* Itens de lista */
+.has-default-background-color li {
+   @apply mb-2;
+}
+
+/* Links */
+.has-default-background-color a {
+   @apply text-blue-500;
+}
+
+/* Citações */
+.has-default-background-color blockquote {
+   @apply border-l-4 border-blue-500 p-4 my-4;
+}
+
+/* Imagens */
+.has-default-background-color img {
+   @apply mx-auto my-4;
+}
+
+/* Notas */
+.has-default-background-color .wp-block-note {
+   @apply bg-yellow-100 border-l-4 border-yellow-500 p-4 my-4;
+}
+
+/* Código */
+.has-default-background-color pre {
+   @apply bg-gray-100 p-4 my-4;
+}
+
+/* Texto pré-formatado */
+.has-default-background-color pre code {
+   @apply whitespace-pre-line;
+}
+
+/* Divisores */
+.has-default-background-color hr {
+   @apply border-b my-4;
+}
+
+.entry-content .alignleft {
+   display: inline;
+   float: left;
+   margin-right: 1.875rem;
+}
+
+.entry-content .alignright {
+   display: inline;
+   float: right;
+   margin-left: 1.875rem;
+}
+
+.entry-content .aligncenter {
+   clear: both;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+img {
+   display: initial;
+}

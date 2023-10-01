@@ -11,7 +11,7 @@
 }
 
 .subfooter-menu-primary ul.menu-primary {
-   @apply flex gap-4 xl:gap-6 items-center flex-wrap;
+   @apply flex gap-4 2xl:gap-6 items-center flex-wrap;
 }
 
 .subfooter-menu-primary ul.menu-primary li a {
@@ -19,7 +19,7 @@
 }
 
 ul.menu-primary {
-   @apply flex gap-x-6 xl:gap-x-10 items-center flex-wrap;
+   @apply flex gap-x-6 2xl:gap-x-10 items-center flex-wrap;
 }
 
 .menu-primary:not(.sub-menu) li a {
