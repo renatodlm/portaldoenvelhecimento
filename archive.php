@@ -14,16 +14,17 @@ get_header();
 <main id="primary" class="site-main">
 
    <div class="container py-12">
-      <?php if (have_posts()) : ?>
-         <header class="page-header">
-            <?php
-            the_archive_title('<h1 class="text-2xl font-bold mb-12 page-title">', '</h1>');
-            // the_archive_description('<div class="archive-description">', '</div>');
-            ?>
-         </header><!-- .page-header -->
-         <div class="flex gap-10">
-            <div class="flex gap-6"><!-- flex-grow -->
-               <div class="flex-1 flex-col flex gap-8">
+      <div class="flex gap-10 w-full">
+         <div class="flex gap-6 w-full"><!-- flex-grow -->
+            <div class="flex-1 flex-col flex gap-8">
+               <?php if (have_posts()) : ?>
+                  <header class="page-header">
+                     <?php
+                     the_archive_title('<h1 class="text-2xl font-bold mb-12 page-title">', '</h1>');
+                     // the_archive_description('<div class="archive-description">', '</div>');
+                     ?>
+                  </header><!-- .page-header -->
+
                   <?php
                   /* Start the Loop */
                   while (have_posts()) :
@@ -57,22 +58,22 @@ get_header();
                   </div>
                <?php
 
-            else :
+               else :
 
-               get_template_part('template-parts/content', 'none');
+                  get_template_part('template-parts/content', 'none');
 
-            endif;
-               ?>
-               </div>
-            </div>
-            <div>
-               <?php
-
-               get_template_part('template-parts/content', 'sidebar-filter');
-
+               endif;
                ?>
             </div>
          </div>
+         <div>
+            <?php
+
+            get_template_part('template-parts/content', 'sidebar-filter');
+
+            ?>
+         </div>
+      </div>
    </div>
 </main><!-- #main -->
 

@@ -11,7 +11,7 @@
 $index = $args['index'] ?? false;
 
 $content_class = $index === 0 ? 'flex-1' : 'flex-1';
-$title_class = $index === 0 ? 'text-4xl font-medium' : 'text-2xl font-medium';
+$title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

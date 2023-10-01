@@ -11,7 +11,7 @@
 $index           = $args['index'] ?? false;
 $thumb_class     = $index === 0 ? 'w-1/2 max-w-full h-[19.625rem] thumb-h-full' : 'w-[18.75rem] h-[11.25rem] thumb-h-full max-w-full';
 $content_class   = $index === 0 ? 'flex-1' : 'flex-1';
-$title_class     = $index === 0 ? 'text-4xl font-medium' : 'text-2xl font-medium';
+$title_class     = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
 $container_class = $index  === 0 ? 'pb-10 border-b border-gray-400' : '';
 ?>
 
