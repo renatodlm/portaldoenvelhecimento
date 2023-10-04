@@ -69,6 +69,7 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
          </div><!-- .entry-content -->
       </div>
    </div>
+   <?php get_template_part('template-parts/content', 'social-share'); ?>
    <div class="w-full">
       <?php
       $author_id = get_the_author_meta('ID');
@@ -120,7 +121,6 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
 
       </div>
    </div>
-
    <div>
       <h4 class="py-4 text-xl font-bold text-gray-800">
          <?php esc_html_e('Posts relacionados', 'portaldoenvelhecimento') ?>
