@@ -18,9 +18,17 @@ $container_class = $index  === 0 ? 'lg:pb-10 lg:border-b lg:border-gray-400' : '
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
    <div class="flex lg:flex-row flex-col gap-10 items-center <?php echo $container_class ?>">
-      <div class="portaldoenvelhecimento-post-thumbnail <?php echo $thumb_class ?>">
-         <?php portaldoenvelhecimento_post_thumbnail(); ?>
-      </div>
+      <?php
+      if (has_post_thumbnail())
+      {
+      ?>
+         <div class="portaldoenvelhecimento-post-thumbnail <?php echo $thumb_class ?>">
+            <?php portaldoenvelhecimento_post_thumbnail(); ?>
+         </div>
+      <?php
+      }
+
+      ?>
       <div class="<?php echo $content_class ?> flex flex-col gap-2">
          <div class="flex gap-2.5">
             <?php
