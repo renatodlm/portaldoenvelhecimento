@@ -19,7 +19,7 @@ get_header();
 <main id="primary" class="site-main">
 
    <div class="container py-12">
-      <div class="flex gap-6 w-full"><!-- flex-grow -->
+      <div class="flex gap-6 w-full flex-wrap"><!-- flex-grow -->
          <div class="flex-1 flex-col flex gap-8 w-full">
             <?php
             $i = 0;
@@ -76,11 +76,11 @@ get_header();
                               {
                                  $posts->the_post();
                               ?>
-                                 <li class="grid grid-cols-2 gap-4 px-4 items-center">
+                                 <li class="grid lg:grid-cols-2 gap-4 px-4 items-center">
                                     <div class="col-span-1"><?php portaldoenvelhecimento_post_thumbnail() ?></div>
-                                    <div class="col-span-1">
-                                       <a class="text-lg font-bold leading-snug" href="<?php echo  get_permalink() ?>"><?php echo  get_the_title() ?></a>
-                                    </div>
+                                    <p class="col-span-1 leading-tight lg:leading-snug mb-0">
+                                       <a class="text-sm lg:text-lg font-bold" href="<?php echo  get_permalink() ?>"><?php echo  get_the_title() ?></a>
+                                    </p>
                                  </li>
                               <?php
                               }

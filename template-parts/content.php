@@ -9,15 +9,15 @@
  */
 
 $index           = $args['index'] ?? false;
-$thumb_class     = $index === 0 ? 'w-1/2 max-w-full h-[19.625rem] thumb-h-full' : 'w-[18.75rem] h-[11.25rem] thumb-h-full max-w-full';
+$thumb_class     = $index === 0 ? 'w-full lg:w-1/2 max-w-full lg:h-[19.625rem] thumb-h-full lg:aspect-auto aspect-video' : 'w-full lg:w-[18.75rem] lg:h-[11.25rem] thumb-h-full max-w-full lg:aspect-auto aspect-video';
 $content_class   = $index === 0 ? 'flex-1' : 'flex-1';
 $title_class     = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
-$container_class = $index  === 0 ? 'pb-10 border-b border-gray-400' : '';
+$container_class = $index  === 0 ? 'lg:pb-10 lg:border-b lg:border-gray-400' : '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-   <div class="flex gap-10 items-center <?php echo $container_class ?>">
+   <div class="flex lg:flex-row flex-col gap-10 items-center <?php echo $container_class ?>">
       <div class="portaldoenvelhecimento-post-thumbnail <?php echo $thumb_class ?>">
          <?php portaldoenvelhecimento_post_thumbnail(); ?>
       </div>
