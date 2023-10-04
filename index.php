@@ -19,7 +19,7 @@ get_header();
 <main id="primary" class="site-main">
 
    <div class="container py-12">
-      <div class="flex gap-6 w-full flex-wrap"><!-- flex-grow -->
+      <div class="flex lg:flex-row flex-col gap-6 w-full flex-wrap"><!-- flex-grow -->
          <div class="flex-1 flex-col flex gap-8 w-full">
             <?php
             $i = 0;

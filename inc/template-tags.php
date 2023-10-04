@@ -31,7 +31,7 @@ if (!function_exists('portaldoenvelhecimento_posted_on')) :
       $posted_on = sprintf(
          /* translators: %s: post date. */
          esc_html_x('%s', 'post date', 'portaldoenvelhecimento'),
-         '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+         '<a class="block leading-tight" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
       );
 
       echo '<span class="posted-on text-gray-400 uppercase text-xs">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

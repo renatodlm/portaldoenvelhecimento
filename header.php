@@ -22,13 +22,13 @@
    <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('overflow-x-hidden'); ?>>
    <?php wp_body_open(); ?>
-   <header>
+   <header class="lg:border-none border-b border-gray-800">
 
       <div class="flex flex-col" x-data="menuHeader">
 
-         <div class="container flex gap-[6.25rem] items-center py-8">
+         <div class="container flex gap-[6.25rem] items-center py-4 lg:py-8">
             <?php the_custom_logo() ?>
             <div class="ads flex-1 lg:flex justify-end items-center hidden">
                <?php dynamic_sidebar('sidebar-2')
@@ -38,11 +38,11 @@
                <?php render_svg('hamburger') ?>
             </button>
          </div>
-         <div x-bind:class="{'hidden':!showMenuMobile}" class="menu-primary-container bg-neutral-500 uppercase lg:flex hidden">
-            <button x-on:click="showMenuMobile = false" class="lg:hidden absolute right-0 top-8 flex items-center justify-center w-8 h-8  ml-auto text-white">
+         <div x-bind:class="{'-mr-[100vw]':!showMenuMobile}" class="menu-primary-container bg-neutral-500 uppercase lg:flex transition-all -mr-[100vw]">
+            <button x-on:click="showMenuMobile = false" class="lg:hidden absolute right-4 top-8 flex items-center justify-center w-8 h-8  ml-auto text-white">
                <?php render_svg('close') ?>
             </button>
-            <div class="container">
+            <div class="container lg:mt-0 mt-4">
                <?php
                wp_nav_menu([
                   'theme_location'  => 'menu-1',

@@ -94,7 +94,7 @@ ul.sub-menu .menu-item.menu-item-has-children:hover::after {
 
 @media(max-width:1024px) {
    header .menu-primary-container {
-      @apply fixed h-full w-full left-0 top-0 bottom-0 right-0 z-[9999] max-w-[100vw] overflow-hidden py-16;
+      @apply fixed h-full w-full left-auto top-0 bottom-0 right-0 z-[9999] max-w-[100vw] overflow-hidden py-16;
    }
 
    header .menu-primary-container ul.menu-primary {

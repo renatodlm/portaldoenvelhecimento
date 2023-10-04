@@ -112,7 +112,7 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
             $related_posts = get_posts(array(
                'tag__in' => $tag_ids,
                'post__not_in' => array($current_post_id),
-               'posts_per_page' => 3,
+               'posts_per_page' => 2,
                'orderby' => 'rand'
             ));
          }
@@ -125,12 +125,12 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
       <h4 class="py-4 text-xl font-bold text-gray-800">
          <?php esc_html_e('Posts relacionados', 'portaldoenvelhecimento') ?>
       </h4>
-      <div class="container p-0 m-0 grid lg:grid-cols-3">
+      <div class="container p-0 m-0 grid gap-4 lg:grid-cols-2">
          <?php if ($related_posts) :
             foreach ($related_posts as $post) :
                $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'thumbnail');
          ?>
-               <div class="col-span-1 flex gap-4 items-center">
+               <div class="col-span-1 flex gap-4">
                   <div class="w-1/2">
                      <a href="<?php echo get_permalink($post->ID) ?>">
                         <img class="w-full rounded-md object-cover h-[7.5rem]" src="<?php echo $thumbnail_url ?>" class="w-full">
@@ -140,6 +140,16 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
                      <a href="<?php echo get_permalink($post->ID) ?>">
                         <h3 class="text-sm font-medium"><?php echo $post->post_title; ?></h3>
                      </a>
+                     <?php
+                     if ('post' === get_post_type()) :
+                     ?>
+                        <div class="entry-meta mt-2">
+                           <?php
+                           portaldoenvelhecimento_posted_on();
+                           // portaldoenvelhecimento_posted_by();
+                           ?>
+                        </div><!-- .entry-meta -->
+                     <?php endif; ?>
                   </div>
                </div>
          <?php endforeach;

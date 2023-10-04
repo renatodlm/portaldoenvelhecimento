@@ -57,6 +57,12 @@ input[type="submit"] {
    @apply text-blue-600 hover:underline;
 }
 
+@media(max-width:1024px) {
+   .entry-content a {
+      @apply break-all;
+   }
+}
+
 .entry-content h1,
 .entry-content h2,
 .entry-content h3,
