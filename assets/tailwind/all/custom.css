@@ -1,3 +1,7 @@
+[x-cloak] {
+   @apply !hidden;
+}
+
 .custom-logo {
    @apply max-w-full w-auto h-[5.625rem];
 }

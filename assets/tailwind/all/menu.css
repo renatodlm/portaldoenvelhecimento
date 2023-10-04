@@ -85,3 +85,43 @@ ul .menu-item.menu-item-has-children:hover::after {
 ul.sub-menu .menu-item.menu-item-has-children:hover::after {
    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
 }
+
+@media(max-width:1024px) {
+   header .menu-primary-container {
+      @apply fixed h-full w-full left-0 top-0 bottom-0 right-0 z-[9999] max-w-[100vw] overflow-hidden py-16;
+   }
+
+   header .menu-primary-container ul.menu-primary {
+      @apply flex-col items-center;
+   }
+
+   header .menu-primary-container ul.menu-primary .menu-item {
+      @apply justify-center w-full;
+   }
+
+   header .menu-primary-container ul.menu-primary .menu-item.menu-item-has-children {
+      @apply flex-wrap justify-center px-0;
+   }
+
+   header .menu-primary-container ul.menu-primary .menu-item.menu-item-has-children a {
+      @apply order-1;
+   }
+
+   header .menu-primary-container ul.menu-primary .sub-menu {
+      flex: 0 0 100%;
+      @apply relative order-3 w-full;
+   }
+
+   header .menu-primary-container ul.menu-primary .menu-item.menu-item-has-children::after {
+      @apply order-2;
+   }
+
+   header .menu-primary-container ul.menu-primary .sub-menu .menu-item>.sub-menu {
+      left: 0;
+
+   }
+
+   header .menu-primary-container ul.menu-primary .sub-menu .menu-item.menu-item-has-children>.sub-menu .menu-item {
+      @apply bg-blue-900 bg-opacity-60;
+   }
+}
