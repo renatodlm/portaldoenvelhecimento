@@ -16,10 +16,10 @@ $current_year = wp_date('Y');
 <footer class="bg-neutral-700">
    <div class="container">
       <div class="py-12">
-         <div class="grid lg:grid-cols-2 xl:grid-cols-5">
+         <div class="lg:grid lg:flex-row flex-col lg:grid-cols-2 xl:grid-cols-5">
             <div class="col-span-1 xl:col-span-2 px-4 lg:mb-0 mb-8 flex flex-col gap-8">
-               <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+               <div class="lg:text-left text-center">
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase lg:text-left text-center">
                      <?php esc_html_e('Sobre Nós', 'portaldoenvelhecimento') ?>
                   </h4>
                   <div class="mb-3">
@@ -32,7 +32,7 @@ $current_year = wp_date('Y');
             </div>
             <div class="col-span-1 px-4 lg:mb-0 mb-8 flex flex-col gap-8">
                <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase lg:text-left text-center">
                      <?php esc_html_e('Menu', 'portaldoenvelhecimento') ?>
                   </h4>
                   <div class="footer-menu-primary">
@@ -46,8 +46,8 @@ $current_year = wp_date('Y');
                      ?>
                   </div>
                </div>
-               <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+               <div class="lg:text-left text-center">
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase lg:text-left text-center">
                      <?php esc_html_e('Arquivos', 'portaldoenvelhecimento') ?>
                   </h4>
                   <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
@@ -58,7 +58,7 @@ $current_year = wp_date('Y');
             </div>
             <div class="col-span-2 px-4 flex flex-col gap-8">
                <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">Contatos</h4>
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase lg:text-left text-center">Contatos</h4>
                   <ul class="footer-contacts-ul divide-y divide-gray-500 text-gray-300 text-sm">
                      <li class="py-2">São Paulo | Brasil</li>
                      <li class="py-2">Fone: <a href="tel:+55 (11) 2579-9697">+55 (11) 2579-9697</a></li>
@@ -69,11 +69,11 @@ $current_year = wp_date('Y');
                      <li class="py-2">Website: <a href="portaldoenvelhecimento.com.br">portaldoenvelhecimento.com.br</a></li>
                   </ul>
                </div>
-               <div>
-                  <h4 class="text-white text-xl font-bold mb-5 uppercase">
+               <div class="lg:text-left text-center">
+                  <h4 class="text-white text-xl font-bold mb-5 uppercase lg:text-left text-center">
                      <?php esc_html_e('Redes sociais', 'portaldoenvelhecimento') ?>
                   </h4>
-                  <ul class="flex space-x-4">
+                  <ul class="flex space-x-4 lg:mx-0 mx-auto w-fit">
                      <li target="_blank">
                         <a class="text-white" href="https://www.facebook.com/portaldoenvelhecimento" class="text-gray-800">
                            <?php render_svg('facebook', 'w-6 h-6') ?>
@@ -101,7 +101,7 @@ $current_year = wp_date('Y');
       </div>
    </div>
    <div class="bg-neutral-800 py-4">
-      <div class="container flex gap-3 lg:gap-6 items-center justify-between flex-wrap">
+      <div class="container flex gap-3 lg:gap-6 items-center lg:text-left lg:justify-between flex-wrap justify-center text-center">
          <div>
             <p class="text-gray-300 m-0">Copyright © <span><?php echo $current_year ?></span> <?php esc_html_e('Portal do Envelhecimento. Todos os direitos reservados.', 'portaldoenvelhecimento') ?></p>
          </div>

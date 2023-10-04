@@ -23,6 +23,18 @@
    column-gap: 1rem;
 }
 
+@media(max-width:1024px) {
+   .footer-contacts-ul {
+      -moz-column-count: 1;
+      -moz-column-gap: 1rem;
+      -webkit-column-count: 1;
+      -webkit-column-gap: 1rem;
+      column-count: 1;
+      column-gap: 1rem;
+      text-align: center
+   }
+}
+
 .pagination {
    @apply pt-5;
 }

@@ -6,6 +6,12 @@
    @apply w-full;
 }
 
+@media(max-width:1024px) {
+   .footer-menu-primary .menu-primary li {
+      @apply justify-center;
+   }
+}
+
 .footer-menu-primary .menu-primary li a {
    @apply text-sm hover:text-blue-500 transition-all !py-2;
 }
