@@ -27,7 +27,7 @@ ul.menu-primary {
 }
 
 .menu-primary li a {
-   @apply text-white font-bold text-sm xl:text-base hover:text-blue-500 transition-all;
+   @apply text-white font-bold text-sm hover:text-blue-500 transition-all;
 }
 
 .menu-item {
