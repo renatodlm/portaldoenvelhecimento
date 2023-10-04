@@ -51,8 +51,8 @@
    </header>
 
    <ul class="lg:flex hidden flex-col space-y-2 w-fit fixed left-0 ml-1 top-1/2 -translate-y-1/2">
-      <li class="p-1 bg-white border border-gray-800" target="_blank">
-         <a href="https://www.facebook.com/portaldoenvelhecimento" class="text-gray-800">
+      <li class="p-1 bg-white border border-gray-800">
+         <a href="https://www.facebook.com/portaldoenvelhecimento" class="text-gray-800" target="_blank">
             <?php render_svg('facebook', 'w-6 h-6') ?>
          </a>
       </li>
