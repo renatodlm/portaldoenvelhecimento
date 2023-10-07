@@ -20,28 +20,78 @@ get_header();
 
    <div class="container py-12">
       <div class="flex lg:flex-row flex-col gap-6 w-full flex-wrap"><!-- flex-grow -->
-         <div class="flex-1 flex-col flex gap-8 w-full">
+         <div class="w-full lg:w-[calc(100%-17.5rem-1.5rem)] flex-1 flex-col flex gap-8">
             <?php
             $i = 0;
-            if (have_posts()) :
 
-               while (have_posts()) :
-                  the_post();
+            $posts_slider = '';
+            $posts_after_slider = '';
+            $posts_slider_thumbs = '';
 
-                  get_template_part('template-parts/content', null, [
-                     'index' => $i
-                  ]);
+            $post_args = [
+               'posts_per_page' => 16,
+               'orderby'        => 'date',
+               'order'          => 'DESC'
+            ];
+
+            $home_posts = new WP_Query($post_args);
+            if ($home_posts->have_posts()) :
+               while ($home_posts->have_posts()) : $home_posts->the_post();
+
+
+                  if ($i < 6)
+                  {
+                     ob_start();
+                     get_template_part('template-parts/content', 'home-slider-item', [
+                        'index' => $i
+                     ]);
+                     $posts_slider .= ob_get_clean();
+
+                     ob_start();
+            ?>
+                     <div class="swiper-slide">
+                        <?php portaldoenvelhecimento_post_thumbnail(null, null, false) ?>
+                     </div>
+            <?php
+                     $posts_slider_thumbs .= ob_get_clean();
+                  }
+                  else
+                  {
+                     ob_start();
+                     get_template_part('template-parts/content', null, [
+                        'index' => $i
+                     ]);
+                     $posts_after_slider .= ob_get_clean();
+                  }
+
                   $i++;
                endwhile;
-
-            else :
-
-               get_template_part('template-parts/content', 'none');
-
             endif;
+            wp_reset_postdata();
             ?>
 
+            <div class="lg:pb-10 lg:border-b lg:border-gray-400">
+               <div class="swiper max-w-full homeSlider2">
+                  <div class="swiper-wrapper">
+                     <?php echo $posts_slider ?>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+               </div>
+               <div class="swiper max-w-full homeSlider">
+                  <div class="swiper-wrapper">
+                     <?php echo $posts_slider_thumbs ?>
+                  </div>
+               </div>
+            </div>
+
             <?php
+
+            echo $posts_after_slider;
+
+
+
             $categorias = get_field('categorias_home', 'option');
 
             if (!empty($categorias))

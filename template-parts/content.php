@@ -8,11 +8,10 @@
  * @package portaldoenvelhecimento
  */
 
-$index           = $args['index'] ?? false;
-$thumb_class     = $index === 0 ? 'w-full lg:w-1/2 max-w-full lg:h-[19.625rem] thumb-h-full lg:aspect-auto aspect-video' : 'w-full lg:w-[18.75rem] lg:h-[11.25rem] thumb-h-full max-w-full lg:aspect-auto aspect-video';
-$content_class   = $index === 0 ? 'flex-1' : 'flex-1';
-$title_class     = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
-$container_class = $index  === 0 ? 'lg:pb-10 lg:border-b lg:border-gray-400' : '';
+$thumb_class     =  'w-full lg:w-[18.75rem] lg:h-[11.25rem] thumb-h-full max-w-full lg:aspect-auto aspect-video';
+$content_class   =  'flex-1';
+$title_class     =  'text-xl font-medium';
+$container_class =  '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

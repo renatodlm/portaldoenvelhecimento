@@ -1,43 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-   const homeForm = document.getElementById('homeForm');
 
-   homeForm.addEventListener('submit', function (event) {
-      event.preventDefault();
+   // var homeSlider = new Swiper('#homeSlider', {
+   //    slidesPerView: 1,
+   //    spaceBetween: 10,
+   //    navigation: {
+   //       nextEl: '.swiper-button-next',
+   //       prevEl: '.swiper-button-prev',
+   //    },
+   //    pagination: {
+   //       el: '.swiper-pagination',
+   //       clickable: true,
+   //    },
+   //    autoplay: {
+   //       delay: 3000,
+   //       disableOnInteraction: false,
+   //    },
+   //    thumbs: {
+   //       swiper: {
+   //          el: '.swiper-thumbs',
+   //          slidesPerView: 3,
+   //       }
+   //    }
+   // });
 
-      let formData = new FormData(homeForm);
-      formData.append('action', 'register_ajax_callback');
-      formData.append('_ajax_nonce', ajax.ajaxNonce);
-      fetch(ajax.ajaxUrl, {
-         method: 'POST',
-         body: formData,
-      })
-         .then((response) => response.json())
-         .then((data) => {
-            if (data.hasOwnProperty('data')) {
-               var mensagem = data.data.message;
-               var dataResponse = document.getElementById('dataResponse');
-               if (dataResponse) {
-                  dataResponse.innerHTML = mensagem;
-                  dataResponse.classList.remove('hidden');
-                  dataResponse.classList.add('block')
-                  setTimeout(function () {
-                     dataResponse.classList.add('hidden');
-                     dataResponse.classList.remove('block')
-                  }, 5000);
-               }
-            }
-            if (data.hasOwnProperty('success')) {
-               if (data.success === true) {
-                  var homeForm = document.getElementById('homeForm');
-
-                  if (homeForm) {
-                     homeForm.reset();
-                  }
-               }
-            }
-         })
-         .catch((error) => {
-            console.error('Ocorreu um erro:', error);
-         });
+   var swiper = new Swiper(".homeSlider", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 6,
+      freeMode: true,
+      watchSlidesProgress: true,
+   });
+   var swiper2 = new Swiper(".homeSlider2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+         swiper: swiper,
+      },
    });
 });

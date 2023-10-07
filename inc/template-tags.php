@@ -128,7 +128,7 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
     * Wraps the post thumbnail in an anchor element on index views, or a div
     * element when on single views.
     */
-   function portaldoenvelhecimento_post_thumbnail($crop = 'post-thumbnail', $class = 'w-full max-full object-cover')
+   function portaldoenvelhecimento_post_thumbnail($crop = 'post-thumbnail', $class = 'w-full max-full object-cover', $url = true)
    {
       if (post_password_required() || is_attachment() || !has_post_thumbnail())
       {
@@ -156,23 +156,26 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
 
       <?php else : ?>
 
-         <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-            <?php
-            the_post_thumbnail(
-               $crop,
-               array(
-                  'alt' => the_title_attribute(
-                     array(
-                        'echo' => false,
-                     )
-                  ),
-                  'class' => $class
-               )
-            );
-            ?>
-         </a>
+         <?php if ($url) : ?>
+            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+            <?php endif;
 
-<?php
+         the_post_thumbnail(
+            $crop,
+            array(
+               'alt' => the_title_attribute(
+                  array(
+                     'echo' => false,
+                  )
+               ),
+               'class' => $class
+            )
+         );
+         if ($url) :
+            ?>
+            </a>
+
+<?php endif;
       endif; // End is_singular().
    }
 endif;
