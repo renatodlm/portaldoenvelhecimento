@@ -54,12 +54,15 @@ module.exports = {
          },
          screens: {
             'xs': '420px',
-            '3xl': '1650px',
+            // '3xl': '1650px',
          },
          borderRadius: {
             'small': '0.1875rem'
          },
          colors: {
+            red: {
+               600: '#AE1F16'
+            },
             purple: {
                400: '#4C2B80',
                500: '#5C2E87',
@@ -69,7 +72,8 @@ module.exports = {
                300: '#E1E1E3',
             },
             blue: {
-               500: '#00b3ff'
+               500: '#00b3ff',
+               900: '#072D5A'
             },
             neutral: {
                100: '#BBBBBB',

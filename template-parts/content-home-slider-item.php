@@ -27,22 +27,7 @@
          <div class="flex-1 flex flex-col gap-2 absolute bottom-0 left-0 right-0 w-full p-4 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.7)]">
             <div class="flex gap-2.5">
                <?php
-               $tags = get_the_tags();
-
-               if ($tags)
-               {
-                  $contador = 0;
-                  foreach ($tags as $tag)
-                  {
-                     $contador++;
-                     $tag_color = get_theme_mod('tag_color_' . $tag->term_id, '#2ecc71');
-
-                     if ($contador <= 3)
-                     {
-                        echo '<a class="py-1 px-2 text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
-                     }
-                  }
-               }
+               tags_in_posts()
                ?>
             </div>
             <header class="entry-header">

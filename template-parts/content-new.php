@@ -10,13 +10,13 @@
 
 $thumb_class     =  'w-full lg:w-[18.75rem] lg:h-[11.25rem] thumb-h-full max-w-full lg:aspect-auto aspect-video';
 $content_class   =  'flex-1';
-$title_class     =  'text-xl font-medium';
+$title_class     =  'text-base font-medium';
 $container_class =  '';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-span-1'); ?>>
 
-   <div class="flex lg:flex-row flex-col gap-10 items-center <?php echo $container_class ?>">
+   <div class="flex flex-col gap-y-4 items-center <?php echo $container_class ?>">
       <?php
       if (has_post_thumbnail())
       {
@@ -31,7 +31,7 @@ $container_class =  '';
       <div class="<?php echo $content_class ?> flex flex-col gap-2">
          <div class="flex gap-2.5">
             <?php
-            tags_in_posts()
+            tags_in_posts(2)
             ?>
          </div>
          <header class="entry-header">
@@ -46,7 +46,7 @@ $container_class =  '';
             ?>
                <div class="entry-meta">
                   <?php
-                  portaldoenvelhecimento_posted_on();
+                  portaldoenvelhecimento_posted_on('text-gray-400 uppercase text-[0.625rem]');
                   // portaldoenvelhecimento_posted_by();
                   ?>
                </div><!-- .entry-meta -->
@@ -54,9 +54,9 @@ $container_class =  '';
          </header><!-- .entry-header -->
 
 
-         <div class="entry-content text-gray-600 text-base">
+         <div class="entry-content text-gray-600 text-sm entry-content-new">
             <?php
-            echo show_excerpt();
+            echo show_excerpt(60);
             ?>
          </div><!-- .entry-content -->
       </div>

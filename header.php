@@ -24,7 +24,7 @@
 
 <body <?php body_class('overflow-x-hidden'); ?>>
    <?php wp_body_open(); ?>
-   <header class="lg:border-none border-b border-gray-800 bg-white">
+   <header class="lg:border-none border-b border-gray-800 bg-blue-900">
 
       <div class="flex flex-col" x-data="menuHeader">
 

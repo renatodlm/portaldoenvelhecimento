@@ -22,21 +22,7 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
       <div class="<?php echo $content_class ?> flex flex-col gap-2">
          <div class="flex gap-2.5">
             <?php
-            $tags = get_the_tags();
-
-            if ($tags)
-            {
-               $contador = 0;
-               foreach ($tags as $tag)
-               {
-                  $contador++;
-                  $tag_color = get_theme_mod('tag_color_' . $tag->term_id, '#2ecc71');
-                  if ($contador <= 3)
-                  {
-                     echo '<a class="py-1 px-2 text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
-                  }
-               }
-            }
+            tags_in_posts()
             ?>
          </div>
          <header class="entry-header">

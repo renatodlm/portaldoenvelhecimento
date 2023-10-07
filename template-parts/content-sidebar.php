@@ -1,12 +1,15 @@
-<div class="w-full lg:w-[17.5rem] bg-gray-100 h-fit flex flex-col divide-y divide-gray-400">
+<div class="w-full lg:w-[23.75rem]  h-fit flex flex-col divide-y divide-gray-400">
    <div class="">
-      <div class="py-5 px-4">
+      <div class="pb-5 px-4">
          <h5 class="font-semibold text-base text-gray-800 mb-6">
-            <?php esc_html_e('Você também pode gostar...') ?>
+            <?php esc_html_e('Mais lidas') ?>
          </h5>
          <?php
          $posts = get_posts(array(
-            'numberposts' => 3
+            'numberposts' => 3,
+            'category_name' => 'mais-lida',
+            'orderby' => 'date',
+            'order' => 'DESC'
          ));
 
          if ($posts)
@@ -15,7 +18,7 @@
                <?php
                foreach ($posts as $post)
                {
-                  $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+                  $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'post-thumbnail');
                   $title = $post->post_title;
                ?>
                   <a class="flex gap-3" href="<?php echo get_permalink($post->ID) ?>">
@@ -39,6 +42,7 @@
    <div class=" flex flex-col gap-6 divide-y divide-gray-400">
       <?php
       dynamic_sidebar('newsletter-1')
+      /*
       ?>
       <form action="" class="flex flex-col gap-3 px-4 py-5">
          <h5 class="font-semibold text-lg text-gray-800">
@@ -58,6 +62,7 @@
             <?php esc_html_e('QUERO ME CADASTRAR!', 'portaldoenvelhecimento') ?>
          </button>
       </form>
+      <?php */ ?>
    </div>
    <div class="">
       <div class="py-5 px-4">
@@ -81,6 +86,67 @@
             }
             ?>
          </ul>
+      </div>
+   </div>
+   <div class="">
+      <div class="py-5 px-4">
+         <h5 class="font-semibold text-base text-gray-800 mb-6">
+            <?php esc_html_e('Revista') ?>
+         </h5>
+         <?php
+         $posts = get_posts(array(
+            'numberposts' => 6,
+            'tag_slug__in' => array('revista'),
+            'orderby' => 'date',
+            'order' => 'DESC'
+         ));
+
+         if ($posts)
+         { ?>
+            <div class="flex flex-col gap-4">
+               <?php
+               foreach ($posts as $key => $post)
+               {
+                  $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'post-thumbnail');
+                  $title = $post->post_title;
+
+                  if ($key === 0)
+                  {
+               ?>
+                     <div class="border-b border-gray-400 pb-3">
+                        <a class="flex flex-col gap-3" href="<?php echo get_permalink($post->ID) ?>">
+                           <div>
+                              <img class="w-full object-cover aspect-video" src="<?php echo $thumbnail_url ?>" class="w-full">
+                           </div>
+                           <div>
+                              <h3 class="text-base"><?php echo $title ?></h3>
+
+                           </div>
+                        </a>
+                        <?php portaldoenvelhecimento_posted_on('text-gray-400 text-xs'); ?>
+                     </div>
+                  <?php
+                  }
+                  else
+                  {
+                  ?>
+                     <div>
+                        <a class="flex gap-3" href="<?php echo get_permalink($post->ID) ?>">
+                           <div class="flex-1">
+                              <h3 class="text-sm"><?php echo $title ?></h3>
+                           </div>
+                        </a>
+                        <?php portaldoenvelhecimento_posted_on('text-gray-400 text-xs'); ?>
+                     </div>
+               <?php
+                  }
+               }
+               ?>
+            </div>
+         <?php
+            wp_reset_postdata();
+         }
+         ?>
       </div>
    </div>
    <div class=" flex flex-col gap-6 divide-y divide-gray-400">

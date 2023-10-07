@@ -19,8 +19,8 @@ get_header();
 <main id="primary" class="site-main">
 
    <div class="container py-12">
-      <div class="flex lg:flex-row flex-col gap-6 w-full flex-wrap"><!-- flex-grow -->
-         <div class="w-full lg:w-[calc(100%-17.5rem-1.5rem)] flex-1 flex-col flex gap-8">
+      <div class="flex lg:flex-row flex-col gap-10 w-full flex-wrap"><!-- flex-grow -->
+         <div class="w-full lg:w-[calc(100%-23.75rem-2.5rem)] flex-1 flex-col grid lg:grid-cols-3 gap-y-8 gap-x-4">
             <?php
             $i = 0;
 
@@ -29,7 +29,7 @@ get_header();
             $posts_slider_thumbs = '';
 
             $post_args = [
-               'posts_per_page' => 16,
+               'posts_per_page' => 12,
                'orderby'        => 'date',
                'order'          => 'DESC'
             ];
@@ -50,7 +50,7 @@ get_header();
                      ob_start();
             ?>
                      <div class="swiper-slide">
-                        <?php portaldoenvelhecimento_post_thumbnail(null, null, false) ?>
+                        <?php portaldoenvelhecimento_post_thumbnail('thumbnail', 'w-full max-full object-cover aspect-video', false) ?>
                      </div>
             <?php
                      $posts_slider_thumbs .= ob_get_clean();
@@ -58,7 +58,7 @@ get_header();
                   else
                   {
                      ob_start();
-                     get_template_part('template-parts/content', null, [
+                     get_template_part('template-parts/content', 'new', [
                         'index' => $i
                      ]);
                      $posts_after_slider .= ob_get_clean();
@@ -70,7 +70,7 @@ get_header();
             wp_reset_postdata();
             ?>
 
-            <div class="lg:pb-10 lg:border-b lg:border-gray-400">
+            <div class="col-span-3 lg:pb-6 lg:border-b lg:border-gray-400">
                <div class="swiper max-w-full homeSlider2">
                   <div class="swiper-wrapper">
                      <?php echo $posts_slider ?>
@@ -97,7 +97,7 @@ get_header();
             if (!empty($categorias))
             {
             ?>
-               <div class="flex flex-col gap-8 items-center">
+               <div class="flex flex-col gap-8 items-center col-span-3">
                   <?php
 
                   $i = 0;
@@ -105,6 +105,7 @@ get_header();
                   foreach ($categorias as $categoria)
                   {
                      $categoria_id = $categoria->term_id;
+                     $categoria_slug = $categoria->slug;
 
                      $args = array(
                         'category__in' => array($categoria_id),

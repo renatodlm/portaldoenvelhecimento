@@ -12,7 +12,7 @@ if (!function_exists('portaldoenvelhecimento_posted_on')) :
    /**
     * Prints HTML with meta information for the current post-date/time.
     */
-   function portaldoenvelhecimento_posted_on()
+   function portaldoenvelhecimento_posted_on($class = 'text-gray-400 uppercase text-xs')
    {
       $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
       if (get_the_time('U') !== get_the_modified_time('U'))
@@ -34,7 +34,7 @@ if (!function_exists('portaldoenvelhecimento_posted_on')) :
          '<a class="block leading-tight" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
       );
 
-      echo '<span class="posted-on text-gray-400 uppercase text-xs">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      echo '<span class="posted-on ' . $class . '">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
    }
 endif;
