@@ -24,37 +24,42 @@
 
 <body <?php body_class('overflow-x-hidden'); ?>>
    <?php wp_body_open(); ?>
-   <header class="lg:border-none border-b border-gray-800">
+   <header class="lg:border-none border-b border-gray-800 bg-white">
 
       <div class="flex flex-col" x-data="menuHeader">
 
-         <div class="container flex gap-[6.25rem] items-center py-4 lg:py-8">
+         <div class="container flex justify-between gap-[3.125rem] items-center py-4">
             <?php the_custom_logo() ?>
-            <div class="ads flex-1 lg:flex justify-end items-center hidden">
-               <?php dynamic_sidebar('sidebar-2')
-               ?>
-            </div>
             <button x-on:click="showMenuMobile = true" class="lg:hidden flex items-center justify-center w-8 h-8 ml-auto text-gray-900">
                <?php render_svg('hamburger') ?>
             </button>
-         </div>
-         <div x-bind:class="{'-mr-[100vw]':!showMenuMobile}" class="menu-primary-container bg-neutral-500 uppercase lg:flex lg:transition-none transition-all">
-            <button x-on:click="showMenuMobile = false" class="lg:hidden absolute right-4 top-8 flex items-center justify-center w-8 h-8  ml-auto text-white">
-               <?php render_svg('close') ?>
-            </button>
-            <div class="container lg:mt-0 mt-4">
-               <?php
-               wp_nav_menu([
-                  'theme_location'  => 'menu-1',
-                  'container_class' => '',
-                  'container'       => 'nav',
-                  'menu_class'      => 'menu-primary'
-               ]);
-               ?>
+            <div x-bind:class="{'-mr-[100vw]':!showMenuMobile}" class="menu-primary-container uppercase lg:flex lg:transition-none transition-all">
+               <button x-on:click="showMenuMobile = false" class="lg:hidden absolute right-4 top-8 flex items-center justify-center w-8 h-8  ml-auto text-gray-800">
+                  <?php render_svg('close') ?>
+               </button>
+               <div class="container lg:mt-0 mt-4">
+                  <?php
+                  wp_nav_menu([
+                     'theme_location'  => 'menu-1',
+                     'container_class' => '',
+                     'container'       => 'nav',
+                     'menu_class'      => 'menu-primary'
+                  ]);
+                  ?>
+               </div>
             </div>
          </div>
       </div>
    </header>
+   <div class="ads bg-gray-100">
+      <div class="flex justify-center items-center container">
+         <?php
+
+         dynamic_sidebar('sidebar-2')
+
+         ?>
+      </div>
+   </div>
 
    <ul class="lg:flex hidden flex-col space-y-2 w-fit fixed left-0 ml-1 top-1/2 -translate-y-1/2">
       <li class="p-1 bg-white border border-gray-800">

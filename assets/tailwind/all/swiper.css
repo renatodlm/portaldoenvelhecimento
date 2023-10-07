@@ -46,9 +46,9 @@
    height: 3.125rem;
    width: 3.125rem;
    bottom: 3.125rem;
-   background-color: white;
    color: black;
    top: auto;
+   @apply bg-gradient-to-r from-white to-white;
 }
 
 .swiper-button-prev {
@@ -57,9 +57,9 @@
    height: 3.125rem;
    width: 3.125rem;
    bottom: 0;
-   background-color: white;
    color: black;
    top: auto;
+   @apply bg-gradient-to-r from-white to-white;
 }
 
 .swiper-button-next,
@@ -80,11 +80,14 @@
    }
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover,
+.swiper-button-prev:focus,
+.swiper-button-prev:hover {
+   @apply bg-gradient-to-l from-gray-200 to-white;
+}
+
 .swiper-button-next:focus,
-.swiper-button-prev:focus {
-   @apply bg-gray-300;
+.swiper-button-next:hover {
+   @apply bg-gradient-to-r from-gray-200 to-white;
 }
 
 .swiper-button-prev::after,

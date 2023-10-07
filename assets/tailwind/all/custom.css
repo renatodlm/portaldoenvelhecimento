@@ -3,11 +3,11 @@
 }
 
 .custom-logo {
-   @apply max-w-full w-auto h-[5.625rem];
+   @apply max-w-full w-auto h-[4.375rem] object-contain;
 }
 
 .portaldoenvelhecimento-post-thumbnail.thumb-h-full a {
-   @apply block h-full hover:text-blue-500 transition-all;
+   @apply block h-full hover:text-yellow-500 transition-all;
 }
 
 .portaldoenvelhecimento-post-thumbnail.thumb-h-full img {

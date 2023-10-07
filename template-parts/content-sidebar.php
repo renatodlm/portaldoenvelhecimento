@@ -1,4 +1,4 @@
-<div class="w-full lg:w-[17.5rem] bg-[#D9D9D9] h-fit flex flex-col divide-y divide-gray-400">
+<div class="w-full lg:w-[17.5rem] bg-gray-100 h-fit flex flex-col divide-y divide-gray-400">
    <div class="">
       <div class="py-5 px-4">
          <h5 class="font-semibold text-base text-gray-800 mb-6">

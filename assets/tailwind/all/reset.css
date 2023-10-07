@@ -3,7 +3,8 @@ body {
 }
 
 body a {
-   @apply hover:text-blue-500 transition-all;
+   transition: color ease 0.3s;
+   @apply hover:text-blue-400;
 }
 
 /* Estilo padrão para inputs */
@@ -150,7 +151,7 @@ input[type="submit"] {
 
 /* Notas */
 .has-default-background-color .wp-block-note {
-   @apply bg-yellow-100 border-l-4 border-yellow-500 p-4 my-4;
+   @apply bg-yellow-100 border-l-4 border-blue-400 p-4 my-4;
 }
 
 /* Código */
