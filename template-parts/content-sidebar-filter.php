@@ -7,7 +7,7 @@ if (is_category())
 }
 
 ?>
-<div class="w-full lg:w-[17.5rem] bg-[#D9D9D9] rounded-lg h-fit flex flex-col divide-y divide-gray-400">
+<div class="w-full lg:w-[17.5rem] bg-[#D9D9D9] h-fit flex flex-col divide-y divide-gray-400">
    <div class="py-5 px-4">
       <h5 class="font-semibold text-lg mb-3 uppercase text-gray-800">
          <?php esc_html_e('Tags', 'portaldoenvelhecimento') ?>
@@ -27,7 +27,7 @@ if (is_category())
                {
          ?>
                   <li class="text-sm inline-block">
-                     <a class="py-1 px-2 bg-blue-500 rounded-md text-white text-xs hover:text-white" href="<?php echo get_tag_link($tag->term_id) ?>" style="background-color:<?php echo $tag_color ?>"><?php echo $tag->name ?></a>
+                     <a class="py-1 px-2 bg-blue-500 text-white text-xs hover:text-white" href="<?php echo get_tag_link($tag->term_id) ?>" style="background-color:<?php echo $tag_color ?>"><?php echo $tag->name ?></a>
                   </li>
          <?php
                }

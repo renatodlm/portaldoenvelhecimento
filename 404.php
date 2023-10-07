@@ -22,7 +22,7 @@ get_header();
 
       <div class="page-content flex flex-col justify-center items-center">
          <h1 class="text-[9.375rem] font-bold text-gray-800">404</h1>
-         <a href="<?php echo get_home_url() ?>" class="bg-yellow-400 rounded-lg text-gray-800 py-2 px-5 max-auto">Go home</a>
+         <a href="<?php echo get_home_url() ?>" class="bg-yellow-400 text-gray-800 py-2 px-5 max-auto">Go home</a>
       </div><!-- .page-content -->
    </section><!-- .error-404 -->
 

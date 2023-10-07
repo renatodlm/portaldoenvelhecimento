@@ -17,17 +17,17 @@ input[type="url"],
 input[type="search"],
 input[type="button"],
 input[type="reset"] {
-   @apply border border-gray-300 p-2 rounded-md focus:outline-none max-w-full;
+   @apply border border-gray-300 p-2 focus:outline-none max-w-full;
 }
 
 /* Estilo para textarea */
 textarea {
-   @apply border border-gray-300 p-2 rounded-md focus:outline-none max-w-full;
+   @apply border border-gray-300 p-2 focus:outline-none max-w-full;
 }
 
 /* Estilo para select */
 select {
-   @apply border border-gray-300 p-2 rounded-md focus:outline-none max-w-full;
+   @apply border border-gray-300 p-2 focus:outline-none max-w-full;
 }
 
 input[type="checkbox"] {

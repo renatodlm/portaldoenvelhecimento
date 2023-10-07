@@ -44,7 +44,7 @@ $container_class = $index  === 0 ? 'lg:pb-10 lg:border-b lg:border-gray-400' : '
 
                   if ($contador <= 3)
                   {
-                     echo '<a class="py-1 px-2 rounded-md text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
+                     echo '<a class="py-1 px-2 text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
                   }
                }
             }

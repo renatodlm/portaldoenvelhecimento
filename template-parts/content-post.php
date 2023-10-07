@@ -17,7 +17,7 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
 
    <div class="flex gap-10 flex-col items-center">
       <div class="portaldoenvelhecimento-post-thumbnail w-full">
-         <?php portaldoenvelhecimento_post_thumbnail(null, 'w-full max-full rounded-lg object-cover lg:aspect-16/6 aspect-video'); ?>
+         <?php portaldoenvelhecimento_post_thumbnail(null, 'w-full max-full object-cover lg:aspect-16/6 aspect-video'); ?>
       </div>
       <div class="<?php echo $content_class ?> flex flex-col gap-2">
          <div class="flex gap-2.5">
@@ -33,7 +33,7 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
                   $tag_color = get_theme_mod('tag_color_' . $tag->term_id, '#2ecc71');
                   if ($contador <= 3)
                   {
-                     echo '<a class="py-1 px-2 rounded-md text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
+                     echo '<a class="py-1 px-2 text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
                   }
                }
             }
@@ -80,10 +80,10 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
       $post_count = count_user_posts($author_id);
       ?>
 
-      <div class="bg-gray-100 p-4 mb-4 mt-6 rounded-lg">
+      <div class="bg-gray-100 p-4 mb-4 mt-6">
          <div class="flex mb-4 gap-4">
             <div class="flex-shrink-0">
-               <img class="w-[5rem] h-[5rem] rounded-full" src="<?php echo $author_avatar; ?>" alt="Avatar do Autor">
+               <img class="w-[5rem] h-[5rem]" src="<?php echo $author_avatar; ?>" alt="Avatar do Autor">
             </div>
             <div class="flex flex-col gap-4">
                <h3 class="text-xl font-bold text-gray-800 mb-0"><?php echo $author_name; ?></h3>
@@ -133,7 +133,7 @@ $title_class = $index === 0 ? 'text-3xl font-medium' : 'text-xl font-medium';
                <div class="col-span-1 flex gap-4">
                   <div class="w-1/2">
                      <a href="<?php echo get_permalink($post->ID) ?>">
-                        <img class="w-full rounded-md object-cover h-[7.5rem]" src="<?php echo $thumbnail_url ?>" class="w-full">
+                        <img class="w-full object-cover h-[7.5rem]" src="<?php echo $thumbnail_url ?>" class="w-full">
                      </a>
                   </div>
                   <div class="w-1/2">

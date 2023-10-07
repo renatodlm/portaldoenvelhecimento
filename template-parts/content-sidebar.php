@@ -1,4 +1,4 @@
-<div class="w-full lg:w-[17.5rem] bg-[#D9D9D9] rounded-lg h-fit flex flex-col divide-y divide-gray-400">
+<div class="w-full lg:w-[17.5rem] bg-[#D9D9D9] h-fit flex flex-col divide-y divide-gray-400">
    <div class="">
       <div class="py-5 px-4">
          <h5 class="font-semibold text-base text-gray-800 mb-6">
@@ -20,7 +20,7 @@
                ?>
                   <a class="flex gap-3" href="<?php echo get_permalink($post->ID) ?>">
                      <div class="w-[4.1875rem]">
-                        <img class="w-full rounded-md object-cover max-h-[2.5rem]" src="<?php echo $thumbnail_url ?>" class="w-full">
+                        <img class="w-full object-cover max-h-[2.5rem]" src="<?php echo $thumbnail_url ?>" class="w-full">
                      </div>
                      <div class="flex-1">
                         <h3 class="text-xs"><?php echo $title ?></h3>
@@ -40,7 +40,7 @@
       <?php
       dynamic_sidebar('newsletter-1')
       ?>
-      <form action="" class="flex flex-col gap-3">
+      <form action="" class="flex flex-col gap-3 px-4 py-5">
          <h5 class="font-semibold text-lg text-gray-800">
             <?php esc_html_e('Newsletter', 'portaldoenvelhecimento') ?>
          </h5>
@@ -54,7 +54,7 @@
             esc_html_e('Ao se cadastrar você está concordando com os termos e em receber informações sobre a nossa programação de cursos e lançamentos.', 'portaldoenvelhecimento')
             ?>
          </p>
-         <button class="bg-yellow-400 rounded-lg py-2 px-4 uppercase font-medium text-base text-black" type="submit">
+         <button class="bg-yellow-400 py-2 px-4 uppercase font-medium text-base text-black" type="submit">
             <?php esc_html_e('QUERO ME CADASTRAR!', 'portaldoenvelhecimento') ?>
          </button>
       </form>

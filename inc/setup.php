@@ -140,7 +140,7 @@ class Advertisement_Widget extends WP_Widget
             <option value="125x125" <?php selected($size, '125x125'); ?>>125x125</option>
          </select>
       </p>
-<?php
+   <?php
    }
 
    public function update($new_instance, $old_instance)
@@ -415,3 +415,13 @@ if (function_exists('acf_add_local_field_group')) :
    ));
 
 endif;
+
+
+add_action('wp_footer', 'accessibility_button');
+
+function accessibility_button()
+{
+   ?>
+   <script src="https://cdn.assistive.com.br/plugin/AssistiveWebPlugin.js" charset="UTF-8" type="text/javascript" async onload="assistive.init({})"></script>
+<?php
+}

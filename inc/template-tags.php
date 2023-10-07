@@ -128,7 +128,7 @@ if (!function_exists('portaldoenvelhecimento_post_thumbnail')) :
     * Wraps the post thumbnail in an anchor element on index views, or a div
     * element when on single views.
     */
-   function portaldoenvelhecimento_post_thumbnail($crop = 'post-thumbnail', $class = 'w-full max-full rounded-lg object-cover')
+   function portaldoenvelhecimento_post_thumbnail($crop = 'post-thumbnail', $class = 'w-full max-full object-cover')
    {
       if (post_password_required() || is_attachment() || !has_post_thumbnail())
       {
