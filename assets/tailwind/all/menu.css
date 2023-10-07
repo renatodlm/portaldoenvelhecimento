@@ -42,7 +42,7 @@ ul.menu-primary {
 
 .sub-menu {
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   @apply text-white top-full left-0 min-w-[12.5rem] absolute hidden bg-[#093a51] divide-y divide-gray-500;
+   @apply text-white top-full left-0 min-w-[12.5rem] absolute hidden bg-[#093a51] divide-y divide-gray-500 z-50;
 }
 
 .sub-menu,

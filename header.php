@@ -38,7 +38,7 @@
                <?php render_svg('hamburger') ?>
             </button>
          </div>
-         <div x-bind:class="{'-mr-[100vw]':!showMenuMobile}" class="menu-primary-container bg-neutral-500 uppercase lg:flex transition-all -mr-[100vw]">
+         <div x-bind:class="{'-mr-[100vw]':!showMenuMobile}" class="menu-primary-container bg-neutral-500 uppercase lg:flex lg:transition-none transition-all">
             <button x-on:click="showMenuMobile = false" class="lg:hidden absolute right-4 top-8 flex items-center justify-center w-8 h-8  ml-auto text-white">
                <?php render_svg('close') ?>
             </button>

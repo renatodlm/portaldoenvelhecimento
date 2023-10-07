@@ -1,6 +1,5 @@
 document.addEventListener('alpine:init', () => {
    let self
-   console.log(Alpine)
    Alpine.data('menuHeader', () => ({
       showMenuMobile: false,
 
