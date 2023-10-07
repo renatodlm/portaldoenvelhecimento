@@ -156,3 +156,24 @@ function adicionar_campo_portaldoenvelhecimento_institution($user)
 }
 add_action('show_user_profile', 'adicionar_campo_portaldoenvelhecimento_institution');
 add_action('edit_user_profile', 'adicionar_campo_portaldoenvelhecimento_institution');
+
+
+function tags_in_posts($max = 4)
+{
+   $tags = get_the_tags();
+
+   if ($tags)
+   {
+      $contador = 0;
+      foreach ($tags as $tag)
+      {
+         $contador++;
+         $tag_color = get_theme_mod('tag_color_' . $tag->term_id, '#2ecc71');
+
+         if ($contador <= $max)
+         {
+            echo '<a class="py-1 px-2 text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
+         }
+      }
+   }
+}
