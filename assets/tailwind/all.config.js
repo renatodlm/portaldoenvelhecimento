@@ -51,6 +51,7 @@ module.exports = {
       extend: {
          aspectRatio: {
             '16/6': '16 / 6',
+            '16/15': '16 / 15',
          },
          screens: {
             'xs': '420px',
@@ -73,6 +74,7 @@ module.exports = {
             },
             blue: {
                500: '#00b3ff',
+               600: '#1F5A9F',
                900: '#072D5A'
             },
             neutral: {

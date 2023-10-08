@@ -27,7 +27,7 @@ get_header();
                         ?>
                      </h1>
                   </header><!-- .page-header -->
-
+                  <?php get_search_form() ?>
 
                   <?php
                   /* Start the Loop */

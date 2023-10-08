@@ -45,18 +45,50 @@
 }
 
 .pagination a {
-   @apply py-2 px-4 bg-yellow-400 text-white hover:text-white;
+   @apply py-2 px-4 bg-gray-400 text-white hover:text-white;
 }
 
 .pagination .current {
-   @apply py-2 px-4 bg-blue-500 text-white hover:text-white;
+   @apply py-2 px-4 bg-red-600 text-white hover:text-white;
 }
 
 
 .widget-title {
-   @apply font-semibold text-lg text-gray-800 mb-4;
+   @apply font-bold text-lg text-gray-800 mb-4 uppercase;
+}
+
+body.single-post .entry-header {
+   margin-bottom: 2.5rem;
 }
 
 .entry-content-new p {
    @apply text-sm;
+}
+
+form.search-form {
+   @apply w-full flex gap-4 items-center;
+}
+
+form.search-form .search-field {
+   @apply flex-1 w-full h-10;
+}
+
+form.search-form .search-submit {
+   @apply bg-red-600 p-1 w-10 h-10 flex items-center justify-center;
+}
+
+body.search form.search-form .search-submit {
+   @apply h-10;
+}
+
+form.search-form label {
+   @apply w-full;
+}
+
+.advertisement-content a {
+   display: block;
+}
+
+.advertisement-content img {
+   object-fit: cover;
 }

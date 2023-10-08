@@ -46,7 +46,7 @@ ul.menu-primary {
 
 .sub-menu {
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   @apply text-white top-full left-0 min-w-[12.5rem] absolute hidden bg-blue-900 divide-y divide-gray-100 z-50;
+   @apply text-white top-full left-0 min-w-[12.5rem] absolute hidden bg-blue-600 divide-y divide-gray-100 z-50;
 }
 
 .sub-menu,
@@ -72,7 +72,7 @@ ul.menu-primary {
 }
 
 .sub-menu .menu-item:hover {
-   @apply bg-blue-900;
+   @apply bg-blue-600;
 }
 
 .sub-menu .menu-item:hover a {
@@ -104,7 +104,7 @@ ul.sub-menu .menu-item.menu-item-has-children:hover::after {
 
 @media(max-width:1024px) {
    header .menu-primary-container {
-      @apply fixed h-full w-full left-auto top-0 bottom-0 right-0 z-[9999] max-w-[100vw] overflow-hidden py-16;
+      @apply fixed h-full w-full left-auto top-0 bottom-0 right-0 z-[9999] max-w-[100vw] overflow-hidden py-16 bg-blue-900;
    }
 
    header .menu-primary-container ul.menu-primary {

@@ -86,7 +86,7 @@ class Advertisement_Widget extends WP_Widget
       $image = $instance['image'];
       $link = $instance['link'];
       $size = $instance['size'];
-
+      $sizes = explode('x', $size);
       echo $args['before_widget'];
       if (!empty($title))
       {
@@ -98,7 +98,7 @@ class Advertisement_Widget extends WP_Widget
          </div>
          <div class="advertisement-content">
             <a href="<?php echo $link; ?>" class="single_ad_<?php echo $size; ?>" target="_blank" rel="nofollow">
-               <img src="<?php echo $image; ?>" width="<?php echo $this->get_size_width($size); ?>" height="<?php echo $this->get_size_height($size); ?>">
+               <img src="<?php echo $image; ?>" width="<?php echo $this->get_size_width($size); ?>" height="<?php echo $this->get_size_height($size); ?>" style="width:<?php echo $sizes[0] ?>px!important;height:<?php echo $sizes[1] ?>px!important">
             </a>
          </div>
       </div>
@@ -425,3 +425,12 @@ function accessibility_button()
    <script src="https://cdn.assistive.com.br/plugin/AssistiveWebPlugin.js" charset="UTF-8" type="text/javascript" async onload="assistive.init({})"></script>
 <?php
 }
+
+function ocultar_barra_admin()
+{
+   if (!current_user_can('administrator'))
+   {
+      show_admin_bar(false);
+   }
+}
+add_action('after_setup_theme', 'ocultar_barra_admin');

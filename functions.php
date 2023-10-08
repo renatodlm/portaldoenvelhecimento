@@ -56,71 +56,6 @@ if (defined('JETPACK__VERSION'))
    require get_template_directory() . '/inc/jetpack.php';
 }
 
-add_action('wp_ajax_register_ajax_callback', 'register_ajax_callback');
-add_action('wp_ajax_nopriv_register_ajax_callback', 'register_ajax_callback');
-function register_ajax_callback()
-{
-   $nonce = $_POST['_ajax_nonce'];
-   if (!wp_verify_nonce($nonce, 'defaultNonce'))
-   {
-      wp_send_json_error('Nonce inválido');
-   }
-
-   if (empty($_POST['name']) || empty($_POST['email']))
-   {
-      wp_send_json_error(
-         [
-            'message' => esc_html__('Erro ao capturar pagamento da API', 'englishpass')
-         ],
-         WP_Http::BAD_REQUEST
-      );
-   }
-
-   if (username_exists($_POST['email']) || email_exists($_POST['email']))
-   {
-      wp_send_json_error(
-         [
-            'message' => esc_html__('E-mail ja cadastrado!', 'englishpass')
-         ],
-         WP_Http::BAD_REQUEST
-      );
-   }
-
-   $password = wp_generate_password(12, false);
-
-   $new_user_id = wp_create_user($_POST['email'], $password, $_POST['email']);
-
-   if (is_wp_error($new_user_id))
-   {
-      wp_send_json_error([
-         'message' => esc_html__('Erro ao criar usuário.', 'englishpass'),
-      ], WP_Http::BAD_REQUEST);
-   }
-
-   if (!empty($_POST['institution']))
-   {
-      update_user_meta($new_user_id, 'portaldoenvelhecimento_institution', $_POST['institution']);
-   }
-
-   $name = $_POST['name'];
-   $email = $_POST['email'];
-   $institution = $_POST['institution'];
-
-   $subject = get_bloginfo('name') . ' - Novo usuário criado';
-   $message = "Um novo usuário foi criado com as seguintes informações:\n\n";
-   $message .= "Nome: $name\n";
-   $message .= "E-mail: $email\n";
-   $message .= "Instituição: $institution";
-
-   $admin_email = get_option('admin_email');
-
-   wp_mail($admin_email, $subject, $message);
-
-   wp_send_json_success([
-      'message' => 'Dados enviados com sucesso!'
-   ]);
-}
-
 function adicionar_coluna_portaldoenvelhecimento_institution($columns)
 {
    $columns['portaldoenvelhecimento_institution'] = 'Instituição';
@@ -177,3 +112,14 @@ function tags_in_posts($max = 4)
       }
    }
 }
+
+function filter_search($query)
+{
+   if ($query->is_search)
+   {
+      $query->set('post_type', 'post');
+   }
+   return $query;
+}
+
+add_filter('pre_get_posts', 'filter_search');

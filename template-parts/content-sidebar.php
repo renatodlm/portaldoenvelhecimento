@@ -1,7 +1,7 @@
 <div class="w-full lg:w-[23.75rem]  h-fit flex flex-col divide-y divide-gray-400">
    <div class="">
       <div class="pb-5 px-4">
-         <h5 class="font-semibold text-base text-gray-800 mb-6">
+         <h5 class="font-bold text-lg text-gray-800 mb-6 uppercase">
             <?php esc_html_e('Mais lidas') ?>
          </h5>
          <?php
@@ -21,14 +21,19 @@
                   $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'post-thumbnail');
                   $title = $post->post_title;
                ?>
-                  <a class="flex gap-3" href="<?php echo get_permalink($post->ID) ?>">
-                     <div class="w-[4.1875rem]">
-                        <img class="w-full object-cover max-h-[2.5rem]" src="<?php echo $thumbnail_url ?>" class="w-full">
+                  <div class="flex gap-4">
+                     <div class="w-2/5">
+                        <a class="flex gap-3" href="<?php echo get_permalink($post->ID) ?>">
+                           <img class="w-full object-cover aspect-video" src="<?php echo $thumbnail_url ?>" class="w-full">
+                        </a>
                      </div>
                      <div class="flex-1">
-                        <h3 class="text-xs"><?php echo $title ?></h3>
+                        <a class="flex gap-3 mb-1" href="<?php echo get_permalink($post->ID) ?>">
+                           <h3 class="text-sm font-semibold"><?php echo $title ?></h3>
+                        </a>
+                        <?php portaldoenvelhecimento_posted_on('text-gray-400 text-[0.625rem]'); ?>
                      </div>
-                  </a>
+                  </div>
                <?php
                }
                ?>
@@ -90,7 +95,7 @@
    </div>
    <div class="">
       <div class="py-5 px-4">
-         <h5 class="font-semibold text-base text-gray-800 mb-6">
+         <h5 class="font-bold text-lg text-gray-800 mb-6 uppercase">
             <?php esc_html_e('Revista') ?>
          </h5>
          <?php
@@ -119,7 +124,7 @@
                               <img class="w-full object-cover aspect-video" src="<?php echo $thumbnail_url ?>" class="w-full">
                            </div>
                            <div>
-                              <h3 class="text-base"><?php echo $title ?></h3>
+                              <h3 class="text-base font-bold"><?php echo $title ?></h3>
 
                            </div>
                         </a>
@@ -133,7 +138,7 @@
                      <div>
                         <a class="flex gap-3" href="<?php echo get_permalink($post->ID) ?>">
                            <div class="flex-1">
-                              <h3 class="text-sm"><?php echo $title ?></h3>
+                              <h3 class="text-sm font-semibold"><?php echo $title ?></h3>
                            </div>
                         </a>
                         <?php portaldoenvelhecimento_posted_on('text-gray-400 text-xs'); ?>

@@ -17,7 +17,7 @@
          if (has_post_thumbnail())
          {
          ?>
-            <div class="portaldoenvelhecimento-post-thumbnail w-full thumb-h-full aspect-video">
+            <div class="portaldoenvelhecimento-post-thumbnail w-full thumb-h-full aspect-16/15 lg:aspect-video">
                <?php portaldoenvelhecimento_post_thumbnail(); ?>
             </div>
          <?php

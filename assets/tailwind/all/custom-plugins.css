@@ -1,0 +1,28 @@
+.sp-form,
+.sp-form-outer>div {
+   padding: 0 !important;
+   border: none !important;
+}
+
+.sp-form-outer>div .sp-field {
+   padding: 0 !important;
+   border: none !important;
+}
+
+.sp-form .sp-link-wrapper,
+.sp-form-outer .sp-link-wrapper {
+   display: none !important;
+}
+
+.sp-form .sp-element-container,
+.sp-form-outer .sp-element-container {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   gap: 0.75rem;
+}
+
+.sp-form .sp-element-container .sp-button,
+.sp-form-outer .sp-element-container .sp-button {
+   @apply !text-sm !border-none !rounded-none !bg-yellow-400 py-2 px-4 !uppercase !font-bold !text-black;
+}

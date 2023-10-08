@@ -20,7 +20,7 @@ get_header();
 
    <div class="container py-12">
       <div class="flex lg:flex-row flex-col gap-10 w-full flex-wrap"><!-- flex-grow -->
-         <div class="w-full lg:w-[calc(100%-23.75rem-2.5rem)] flex-1 flex-col grid lg:grid-cols-3 gap-y-8 gap-x-4">
+         <div class="w-full lg:w-[calc(100%-23.75rem-2.5rem)] flex-1 flex-col flex lg:grid lg:grid-cols-3 gap-y-8 gap-x-4 h-fit">
             <?php
             $i = 0;
 
