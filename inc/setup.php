@@ -340,7 +340,7 @@ function portaldoenvelhecimento_widgets_init()
    );
    register_sidebar(
       array(
-         'name'          => esc_html__('Newsletter', 'portaldoenvelhecimento'),
+         'name'          => esc_html__('Newsletter Sidebar', 'portaldoenvelhecimento'),
          'id'            => 'newsletter-1',
          // 'description'   => esc_html__('Add widgets here.', 'portaldoenvelhecimento'),
          'before_widget' => '<section id="%1$s" class="py-5 px-4 widget %2$s">',
@@ -349,6 +349,38 @@ function portaldoenvelhecimento_widgets_init()
          'after_title'   => '</h2>',
       )
    );
+
+   register_sidebar(
+      array(
+         'name'          => esc_html__('Newsletter Dentro do Post', 'portaldoenvelhecimento'),
+         'id'            => 'newsletter-2',
+         // 'description'   => esc_html__('Add widgets here.', 'portaldoenvelhecimento'),
+         'before_widget' => '<section id="%1$s" class="py-5 px-4 widget %2$s">',
+         'after_widget'  => '</section>',
+         'before_title'  => '<h2 class="widget-title">',
+         'after_title'   => '</h2>',
+      )
+   );
+
+   $categories = get_categories();
+
+   if (!empty($categories))
+   {
+      foreach ($categories as $category)
+      {
+         register_sidebar(
+            array(
+               'name'          => esc_html__('ADS para Categoria ' . $category->name, 'portaldoenvelhecimento'),
+               'id'            => 'ads-' . $category->slug,
+               'description'   => esc_html__('Coloque aqui apenas o ads correspondente a categoria ' . $category->name, 'portaldoenvelhecimento'),
+               'before_widget' => '<section id="%1$s" class="py-5 px-4 widget %2$s">',
+               'after_widget'  => '</section>',
+               'before_title'  => '<h2 class="widget-title">',
+               'after_title'   => '</h2>',
+            )
+         );
+      }
+   }
 }
 add_action('widgets_init', 'portaldoenvelhecimento_widgets_init');
 

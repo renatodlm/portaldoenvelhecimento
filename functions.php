@@ -18,6 +18,27 @@ if (!defined('_S_VERSION'))
  * Render svg
  */
 require get_template_directory() . '/inc/render-svg.php';
+
+/**
+ * Render svg
+ */
+require get_template_directory() . '/entities/Singular/Singular.php';
+
+/**
+ * Utils
+ */
+require get_template_directory() . '/entities/Post/Utils.php';
+
+/**
+ * Post
+ */
+require get_template_directory() . '/entities/Post/Post.php';
+
+/**
+ * Post_Content_Filter
+ */
+require get_template_directory() . '/entities/Post/Post_Content_Filter.php';
+
 /**
  * Custom setup
  */

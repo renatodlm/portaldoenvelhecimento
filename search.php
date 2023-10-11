@@ -15,7 +15,7 @@ get_header();
 
    <div class="container py-12">
       <div class="flex lg:flex-row flex-col gap-10 w-full">
-         <div class="flex gap-6 w-full"><!-- flex-grow -->
+         <div class="flex gap-6 w-full flex-wrap"><!-- flex-grow -->
             <div class="flex-1 flex-col flex gap-8">
                <?php if (have_posts()) : ?>
 
