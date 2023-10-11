@@ -33,7 +33,7 @@
             <header class="entry-header">
                <?php
 
-               the_title('<h2 class="text-base leading-snug lg:text-3xl font-medium block lg:max-w-[calc(100%-3.125rem-1rem)] max-w-[calc(100%-2rem-1rem)]"><a class="text-white hover:text-white" href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+               the_title('<h2 class="text-base leading-snug lg:text-3xl font-medium block lg:max-w-[calc(100%-3.125rem-1rem)] max-w-[calc(100%-2rem-1rem)]"><a class="text-white hover:text-white focus:text-white" href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 
                if ('post' === get_post_type()) :
                ?>

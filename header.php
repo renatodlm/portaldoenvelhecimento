@@ -76,7 +76,7 @@
                   ?>
                </button>
                <div class="absolute right-0 top-[calc(100%+0.5rem)] w-[calc(100%-1.25rem)] text-center bg-red-600 shadow z-40" x-cloak x-show="userMenu">
-                  <a class="block px-4 py-2 text-white hover:text-white" href="<?php echo wp_logout_url() ?>"><?php esc_html_e('Sair', 'portaldoenvelhecimento'); ?></a>
+                  <a class="block px-4 py-2 text-white hover:text-white focus:text-white" href="<?php echo wp_logout_url() ?>"><?php esc_html_e('Sair', 'portaldoenvelhecimento'); ?></a>
                </div>
             <?php else : ?>
                <a class="flex gap-2 items-center px-2 py-1 text-gray-800 text-sm font-semibold hover:text-gray-400" href="<?php echo wp_login_url() ?>">
@@ -92,7 +92,7 @@
       </div>
 
    </div>
-   <header class="lg:border-none border-b border-gray-800 bg-blue-900 z-[9999] w-full" x-on:scroll.window="scrolled = (window.scrollY > 146)" :class="{ 'fixed top-0 bg-white shadow-lg': scrolled, '': !scrolled }">
+   <header class="lg:border-none border-b border-gray-800 bg-[#1e5d82] z-[9999] w-full" x-on:scroll.window="scrolled = (window.scrollY > 146)" :class="{ 'fixed top-0 bg-white shadow-lg': scrolled, '': !scrolled }">
 
       <div class="flex flex-col" x-data="menuHeader">
 
@@ -124,12 +124,13 @@
                <div class="absolute right-0 top-full min-w-[10rem] bg-red-600 p-2 shadow mt-2 hidden" x-bind:class="{'hidden': !searchOpen}">
                   <?php get_search_form() ?>
                </div>
+               <a class="mx-auto block w-fit lg:ml-6 bg-red-600 text-whitep py-2 px-4 text-xs font-semibold text-white hover:text-white focus:text-white" href="<?php echo home_url('newsletter') ?>"><?php esc_html_e('NEWSLETTER', 'portaldoenvelhecimento') ?></a>
             </div>
 
          </div>
       </div>
    </header>
-   <div class="ads bg-gray-100">
+   <div class="ads">
       <div class="flex justify-center items-center container">
          <?php
 

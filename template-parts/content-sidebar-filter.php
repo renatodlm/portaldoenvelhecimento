@@ -26,7 +26,7 @@ if (is_category())
 
          ?>
                <li class="text-sm inline-block">
-                  <a class="py-1 px-2 bg-blue-500 text-white text-xs hover:text-white" href="<?php echo get_tag_link($tag->term_id) ?>" style="background-color:<?php echo $tag_color ?>"><?php echo $tag->name ?></a>
+                  <a class="py-1 px-2 bg-blue-500 text-white text-xs hover:text-white focus:text-white" href="<?php echo get_tag_link($tag->term_id) ?>" style="background-color:<?php echo $tag_color ?>"><?php echo $tag->name ?></a>
                </li>
          <?php
 

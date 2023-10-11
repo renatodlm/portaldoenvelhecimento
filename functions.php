@@ -128,7 +128,7 @@ function tags_in_posts($max = 4)
 
          if ($contador <= $max)
          {
-            echo '<a class="py-1 px-2 text-white text-xs hover:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
+            echo '<a class="py-1 px-2 text-white text-xs hover:text-white focus:text-white" href="' . get_tag_link($tag->term_id) . '" style="background-color:' . $tag_color . '">' . $tag->name . '</a>';
          }
       }
    }

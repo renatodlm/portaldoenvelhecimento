@@ -118,7 +118,7 @@ get_header();
                         $category_color = get_theme_mod('category_color_' . $categoria_id, '#2ecc71');
                   ?>
                         <div class="category-<?php echo $categoria_slug ?> bg-gray-100 pb-4 items-center">
-                           <h2 class="py-1 px-2 w-fit text-white text-base uppercase hover:text-white mb-4" style="background-color:<?php echo $category_color ?>">
+                           <h2 class="py-1 px-2 w-fit text-white text-base uppercase hover:text-white focus:text-white mb-4" style="background-color:<?php echo $category_color ?>">
                               <?php echo $categoria->name ?>
                            </h2>
                            <ul class="flex">
