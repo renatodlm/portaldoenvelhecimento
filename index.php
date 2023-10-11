@@ -127,10 +127,10 @@ get_header();
                               {
                                  $posts->the_post();
                               ?>
-                                 <li class="grid lg:grid-cols-2 gap-4 px-4 items-center">
+                                 <li class="grid xl:grid-cols-2 gap-4 px-4 items-center">
                                     <div class="col-span-1"><?php portaldoenvelhecimento_post_thumbnail() ?></div>
-                                    <p class="col-span-1 leading-tight lg:leading-snug mb-0">
-                                       <a class="text-sm lg:text-lg font-bold" href="<?php echo  get_permalink() ?>"><?php echo  get_the_title() ?></a>
+                                    <p class="col-span-1 leading-tight mb-0">
+                                       <a class="text-sm xl:text-base font-semibold" href="<?php echo  get_permalink() ?>"><?php echo  get_the_title() ?></a>
                                     </p>
                                  </li>
                               <?php
