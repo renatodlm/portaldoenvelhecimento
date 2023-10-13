@@ -9,8 +9,19 @@
  */
 
 get_header();
-?>
 
+$currentCat_id = !empty($_GET['categoria']) ? $_GET['categoria'] : false;
+$category_name = false;
+$cat_color = '';
+
+if (!empty($currentCat_id))
+{
+   $cat = get_category($currentCat_id);
+   $category_name = $cat->name;
+   $cat_color = get_theme_mod('category_color_' . $cat->term_id, '#E98B40');
+}
+
+?>
 <main id="primary" class="site-main">
 
    <div class="container py-12">
@@ -19,13 +30,17 @@ get_header();
             <div class="flex-1 flex-col flex gap-8">
                <?php if (have_posts()) : ?>
 
-                  <header class="page-header">
-                     <h1 class="page-title text-2xl font-bold">
+                  <header x-data="{currentCat:<?php echo  $currentCat_id ?>, categoryName: '<?php echo $category_name ?>' }" class="page-header">
+                     <h1 class="page-title text-2xl uppercase">
                         <?php
                         /* translators: %s: search query. */
-                        printf(esc_html__('Search Results for: %s', 'portaldoenvelhecimento'), '<span>' . get_search_query() . '</span>');
+                        printf(esc_html__('Resultados para: %s', 'portaldoenvelhecimento'), '<span class="font-bold " style="text-transform: none;">' . get_search_query() . '</span>');
                         ?>
                      </h1>
+                     <p x-show="categoryName !== 'false'" x-cloak class="my-4 text-sm uppercase text-gray-600">
+                        <?php esc_html_e('Na categoria: ', 'portaldoenvelhecimento') ?>
+                        <span class="py-1 px-2 text-gray-800 text-xs hover:text-gray-800 focus:text-gray-800" style="background-color: <?php echo $cat_color ?>;" x-text="categoryName"></span>
+                     </p>
                   </header><!-- .page-header -->
                   <?php get_search_form() ?>
 

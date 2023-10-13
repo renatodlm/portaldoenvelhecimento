@@ -19,6 +19,7 @@ function show_excerpt($limit = 120, $final = '...')
    return $excerpt;
 }
 
+add_action('customize_register', 'register_category_colors_customizer');
 function register_category_colors_customizer($wp_customize)
 {
    $wp_customize->add_section('category_colors_section', array(
@@ -42,8 +43,8 @@ function register_category_colors_customizer($wp_customize)
       )));
    }
 }
-add_action('customize_register', 'register_category_colors_customizer');
 
+add_action('customize_register', 'register_tag_colors_customizer');
 function register_tag_colors_customizer($wp_customize)
 {
    $wp_customize->add_section('tag_colors_section', array(
@@ -67,7 +68,7 @@ function register_tag_colors_customizer($wp_customize)
       )));
    }
 }
-add_action('customize_register', 'register_tag_colors_customizer');
+
 class Advertisement_Widget extends WP_Widget
 {
 
@@ -184,12 +185,11 @@ class Advertisement_Widget extends WP_Widget
    }
 }
 
+add_action('widgets_init', 'register_advertisement_widget');
 function register_advertisement_widget()
 {
    register_widget('Advertisement_Widget');
 }
-
-add_action('widgets_init', 'register_advertisement_widget');
 
 
 /**
@@ -199,6 +199,7 @@ add_action('widgets_init', 'register_advertisement_widget');
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+add_action('after_setup_theme', 'portaldoenvelhecimento_setup');
 function portaldoenvelhecimento_setup()
 {
    /*
@@ -283,7 +284,6 @@ function portaldoenvelhecimento_setup()
       )
    );
 }
-add_action('after_setup_theme', 'portaldoenvelhecimento_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -292,17 +292,18 @@ add_action('after_setup_theme', 'portaldoenvelhecimento_setup');
  *
  * @global int $content_width
  */
+add_action('after_setup_theme', 'portaldoenvelhecimento_content_width', 0);
 function portaldoenvelhecimento_content_width()
 {
    $GLOBALS['content_width'] = apply_filters('portaldoenvelhecimento_content_width', 640);
 }
-add_action('after_setup_theme', 'portaldoenvelhecimento_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+add_action('widgets_init', 'portaldoenvelhecimento_widgets_init');
 function portaldoenvelhecimento_widgets_init()
 {
    register_sidebar(
@@ -382,7 +383,6 @@ function portaldoenvelhecimento_widgets_init()
       }
    }
 }
-add_action('widgets_init', 'portaldoenvelhecimento_widgets_init');
 
 /**
  * Create Theme Options Page
@@ -450,7 +450,6 @@ endif;
 
 
 add_action('wp_footer', 'accessibility_button');
-
 function accessibility_button()
 {
    ?>
@@ -458,6 +457,7 @@ function accessibility_button()
 <?php
 }
 
+add_action('after_setup_theme', 'ocultar_barra_admin');
 function ocultar_barra_admin()
 {
    if (!current_user_can('administrator'))
@@ -465,4 +465,26 @@ function ocultar_barra_admin()
       show_admin_bar(false);
    }
 }
-add_action('after_setup_theme', 'ocultar_barra_admin');
+
+add_action('pre_get_posts', 'custom_search_filter');
+function custom_search_filter($query)
+{
+   if (!is_admin() && $query->is_main_query() && $query->is_search)
+   {
+      if (isset($_GET['categoria']))
+      {
+         $categoria = $_GET['categoria'];
+
+         if ($categoria != 0)
+         {
+            $query->set('tax_query', array(
+               array(
+                  'taxonomy' => 'category',
+                  'field' => 'id',
+                  'terms' => $categoria
+               )
+            ));
+         }
+      }
+   }
+}

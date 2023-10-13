@@ -13,7 +13,7 @@ module.exports = {
       'hidden',
       'bg-green-500',
       'bg-blue-500',
-      'bg-red-500',
+      'bg-red-600',
    ],
    plugins: [require('@tailwindcss/line-clamp')],
    theme: {
@@ -31,7 +31,7 @@ module.exports = {
       },
       fontFamily: {
          primary: [
-            'Inter',
+            'Open Sans',
             'ui-sans-serif',
             'system-ui',
             '-apple-system',
@@ -62,7 +62,7 @@ module.exports = {
          },
          colors: {
             red: {
-               600: '#AE1F16'
+               600: '#E98B40',//'#AE1F16'
             },
             purple: {
                400: '#4C2B80',

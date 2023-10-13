@@ -21,18 +21,18 @@ if ($tags)
    $related_posts = get_posts(array(
       'tag__in' => $tag_ids,
       'post__not_in' => array($current_post_id),
-      'posts_per_page' => 2,
+      'posts_per_page' => 3,
       'orderby' => 'rand'
    ));
 }
 
 ?>
-<div class="my-6">
+<div class="sm:ml-2 my-6 lg:ml-6 float-right sm:w-1/2">
 
    <h4 class="mb-4 !text-sm !uppercase text-gray-800">
-      <?php esc_html_e('Posts relacionados', 'portaldoenvelhecimento') ?>
+      <?php esc_html_e('Artigos que você também pode gostar:', 'portaldoenvelhecimento') ?>
    </h4>
-   <div class="container p-0 m-0 grid gap-4 md:grid-cols-2">
+   <div class="container p-0 m-0 grid gap-4">
       <?php if ($related_posts) :
          foreach ($related_posts as $post)
          {

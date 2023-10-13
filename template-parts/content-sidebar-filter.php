@@ -7,7 +7,7 @@ if (is_category())
 }
 
 ?>
-<div class="w-full lg:w-[23.75rem] bg-[#D9D9D9] h-fit flex flex-col divide-y divide-gray-400">
+<div class="w-full lg:w-[23.75rem] h-fit flex flex-col divide-y divide-gray-400">
    <div class="py-5 px-4">
       <h5 class="font-semibold text-lg mb-3 uppercase text-gray-800">
          <?php esc_html_e('Tags', 'portaldoenvelhecimento') ?>
@@ -103,4 +103,9 @@ if (is_category())
       //get_sidebar('sidebar-1')
       ?>
    </div> -->
+   <div class="py-5 px-4">
+      <a class="py-2 px-4 bg-red-600 text-white hover:text-white focus:text-white" href="<?php echo home_url(); ?>">
+         <?php esc_html_e('Leia mais', 'portaldoenvelhecimento') ?>
+      </a>
+   </div>
 </div>

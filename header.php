@@ -92,7 +92,7 @@
       </div>
 
    </div>
-   <header class="lg:border-none border-b border-gray-800 bg-[#1e5d82] z-[9999] w-full" x-on:scroll.window="scrolled = (window.scrollY > 146)" :class="{ 'fixed top-0 bg-white shadow-lg': scrolled, '': !scrolled }">
+   <header class="lg:border-none border-b border-gray-800 bg-[#2B86BB] z-[9999] w-full" x-on:scroll.window="scrolled = (window.scrollY > 146)" :class="{ 'fixed top-0 bg-white shadow-lg': scrolled, '': !scrolled }">
 
       <div class="flex flex-col" x-data="menuHeader">
 

@@ -1,6 +1,6 @@
-<div class="max-w-md flex gap-2 items-center bg-white my-6">
+<div class="max-w-md flex gap-2 items-center bg-white my-6 lg:flex-row flex-col">
    <h2 class="text-xl font-semibold"><?php esc_html_e('Compartilhe', 'portaldoenvelhecimento') ?></h2>
-   <ul class="flex gap-2 items-center">
+   <ul class="flex gap-2 items-center flex-wrap">
       <li class="p-1 bg-white border border-gray-800">
          <a href="https://api.whatsapp.com/send?text=<?php echo get_the_title() ?> : <?php echo get_permalink() ?>" target="_blank" class="flex items-center space-x-2">
             <?php render_svg('whatsapp', 'w-6 h-6') ?>

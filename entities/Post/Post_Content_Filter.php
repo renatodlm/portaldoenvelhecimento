@@ -78,20 +78,20 @@ class PE_Post_Content_Filter
 
          if ($paragraph_index === $twenty_percent)
          {
-            $new_content .= $this->add_center_ad();
+            $new_content .= $this->add_related_posts($this->related_posts_parts[1]);
          }
-         if ($paragraph_index === $forty_percent && $total_blocks >= 10)
+         if ($paragraph_index === $sixty_percent && $total_blocks >= 10)
          {
             $new_content .= $this->add_newsletter();
          }
-         if ($paragraph_index === $sixty_percent)
-         {
-            $new_content .= $this->add_related_posts($this->related_posts_parts[1]);
-         }
-         if ($paragraph_index === $eighty_percent && $total_blocks >= 10)
+         if ($paragraph_index  === $eighty_percent)
          {
             $new_content .= $this->add_center_ad();
          }
+         // if ($paragraph_index === $eighty_percent && $total_blocks >= 10)
+         // {
+         //    $new_content .= $this->add_center_ad();
+         // }
 
          $paragraph_index++;
       }
@@ -112,16 +112,14 @@ class PE_Post_Content_Filter
    private function add_related_posts($posts_ID)
    {
       ob_start();
-
       get_template_part('template-parts/content-related-posts', null, [
          'posts_ID' => $posts_ID,
       ]);
-
       return ob_get_clean();
    }
 
    private function add_center_ad()
-   {;
+   {
       ob_start();
 
       $Post = new PE_Post();
@@ -146,7 +144,7 @@ class PE_Post_Content_Filter
 
 
       ?>
-      <div class="my-8 flex flex-col gap-6  mx-auto text-center">
+      <div class="my-6 p-4 flex flex-col gap-6 text-center bg-gray-100 float-right sm:ml-6 sm:w-1/2">
          <!-- Subscription Form -->
          <style>
             .sp-force-hide {
@@ -155,7 +153,6 @@ class PE_Post_Content_Filter
 
             .sp-form[sp-id="213245"] {
                display: block;
-               background: rgba(255, 255, 255, 1);
                padding: 15px;
                width: 450px;
                max-width: 100%;

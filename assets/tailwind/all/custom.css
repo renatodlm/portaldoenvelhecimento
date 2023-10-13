@@ -92,3 +92,20 @@ form.search-form label {
 .advertisement-content img {
    object-fit: cover;
 }
+
+.post-navigation .nav-links {
+   @apply flex gap-4 lg:gap-8 justify-between;
+}
+
+.post-navigation .nav-links .nav-next,
+.post-navigation .nav-links .nav-previous {
+   @apply w-1/2 underline text-blue-500;
+}
+
+.post-navigation .nav-links .nav-next {
+   @apply text-right;
+}
+
+.post-navigation .nav-links .nav-subtitle {
+   @apply font-bold;
+}

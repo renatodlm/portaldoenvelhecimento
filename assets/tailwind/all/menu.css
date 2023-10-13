@@ -13,7 +13,7 @@
 }
 
 .footer-menu-primary .menu-primary li a {
-   @apply text-sm hover:text-red-500 transition-all !py-2;
+   @apply text-sm hover:text-red-600 transition-all !py-2;
 }
 
 .subfooter-menu-primary ul.menu-primary {
@@ -21,7 +21,7 @@
 }
 
 .subfooter-menu-primary ul.menu-primary li a {
-   @apply text-sm hover:text-red-500 transition-all py-0;
+   @apply text-sm hover:text-red-600 transition-all py-0;
 }
 
 ul.menu-primary {
@@ -33,7 +33,7 @@ ul.menu-primary {
 }
 
 .menu-primary li a {
-   @apply text-white font-medium text-sm hover:text-red-500 transition-all;
+   @apply text-white font-medium text-sm hover:text-red-600 transition-all;
 }
 
 .menu-item {
@@ -88,9 +88,12 @@ ul.menu-primary {
    padding-top: 5px;
 }
 
-ul .menu-item.menu-item-has-children:hover::after {
-   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23AE1F16" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
+.menu-item:hover>a {
+   @apply !text-red-600;
+}
 
+ul .menu-item.menu-item-has-children:hover::after {
+   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23E98B40" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
 }
 
 ul.sub-menu .menu-item.menu-item-has-children::after {
@@ -98,7 +101,7 @@ ul.sub-menu .menu-item.menu-item-has-children::after {
 }
 
 ul.sub-menu .menu-item.menu-item-has-children:hover::after {
-   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23AE1F16" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
+   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23E98B40" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>');
 
 }
 
